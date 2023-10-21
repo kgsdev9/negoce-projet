@@ -25,7 +25,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
-        
+
 
           <div class="card">
             <div class="card-header">
@@ -35,15 +35,15 @@
                 </div>
                 <div class="col-md-4">
                     <a href="{{ route('prestation.create') }}" class="btn btn-primary">Nouvelle Prestation </a>
-                </div>  
-                
+                </div>
+
               </div>
-            
+
             </div>
             <!-- /.card-header -->
             <div class="card-body">
               <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6">
-                <div class="dt-buttons btn-group flex-wrap">           
+                <div class="dt-buttons btn-group flex-wrap">
                        </div>
                       </div>
                       <div class="col-sm-12 col-md-6">
@@ -53,7 +53,7 @@
                           </div>
                           <div class="row">
                        <div class="col-sm-12">
-                
+
                 <table id="example" class="table table-bordered table-striped dataTable dtr-inline collapsed">
                 <thead>
                 <tr>
@@ -65,36 +65,40 @@
                 </thead>
                 <tbody>
                   @foreach ($ressource as  $value)
-                    
-                 
+
+
                 <tr class="odd">
                   <td class="dtr-control sorting_1" tabindex="0">{{ $value->title }}</td>
-                  <td>{{ $value->mini_description }}</td>
+                  <td>{{ $value->description }}</td>
 
-             
+
                   <td>
-                  
-                     <img src="{{   asset('prestations/'.$value->image) }}" alt="" style="height:100px;width:130px;"> 
+
+                     <img src="{{   asset('prestations/'.$value->image) }}" alt="" style="height:100px;width:130px;">
                 </td>
 
                   <td>
-                  <a href="{{ route('prestation.edit', $value->id)}}" class="text-dark"> <i class="fa-solid fa-pen-to-square"></i></a>
-                  <a href="{{ route('prestation.show', $value->id)}}" class="text-dark"> <i class="fa-solid fa-trash-can"></i></a>
-                  
+                  <a href="{{ route('prestation.destroy', $value->id)}}" class="btn btn-primary"> <i class="fa-solid fa-pen-to-square"></i>Editer</a>
+                    <form action="{{route('prestation.destroy', $value->id)}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                        <button class="btn btn-danger" type="submit" onclick="return confirm('Voulez-vous vraiment supprimer')"> Supprimer</button>
+                    </form>
+
                   </td>
                 </tr>
 
                 @endforeach
                </tbody>
-             
+
               </table>
-            
+
             </div>
-          
+
           </div>
-          
-       
-        
+
+
+
         </div>
             </div>
             <!-- /.card-body -->

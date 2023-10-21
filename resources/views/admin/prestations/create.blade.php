@@ -4,8 +4,8 @@
 <div class="content-wrapper" style="min-height: 2080.12px;">
 
   <div class="content">
-    
-  
+
+
     <div class="card mb-4">
       <!-- Card header -->
       <div class="card-header">
@@ -14,6 +14,16 @@
       <!-- Card body -->
         <form action="{{route('prestation.store')}}" method="post" enctype="multipart/form-data">
             @csrf
+
+@if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
       <div class="card-body">
         <!-- Form groups used in grid -->
         <div class="row">
@@ -23,7 +33,7 @@
                 <small>{{$message}}</small>
 
                 @enderror
-              <label class="form-control-label" for="example3cols1Input">Nom de la catégorie du job </label>
+              <label class="form-control-label" for="example3cols1Input">Nom de la préstration  </label>
               <input type="text" class="form-control" name="title" id="example3cols1Input" placeholder="Nom de la prestation" value="{{ old('title') }}">
             </div>
           </div>
@@ -34,8 +44,8 @@
                 <small>{{$message}}</small>
 
                 @enderror
-              <label class="form-control-label" for="example3cols1Input"> Description miniale de la prestation  </label>
-              <input type="text" class="form-control" name="mini_description" id="example3cols1Input" placeholder="Nom de la categorie" value="{{ old('mini_description') }}">
+              <label class="form-control-label" for="example3cols1Input"> Catégorie de  la prestation  </label>
+              <input type="text" class="form-control" name="categorie" id="example3cols1Input" placeholder="Nom de la categorie" value="{{ old('categorie') }}">
             </div>
           </div>
 
@@ -45,8 +55,8 @@
                 <small>{{$message}}</small>
 
                 @enderror
-              <label class="form-control-label" for="example3cols1Input">Image de la presations </label>
-              <input type="file" class="form-control" name="image" id="example3cols1Input" placeholder="Nom de la categorie" value="{{ old('name') }}">
+              <label class="form-control-label" for="example3cols1Input">Image de la presation </label>
+              <input type="file" class="form-control" name="image" id="example3cols1Input" placeholder="Nom de la categorie">
             </div>
           </div>
 

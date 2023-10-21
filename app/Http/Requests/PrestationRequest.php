@@ -23,9 +23,9 @@ class PrestationRequest extends FormRequest
     {
         return [
             'title'=> 'required|string|max:50',
-            'mini_description'=> 'required|max:100',
-            'description'=> 'required',
-            'image'=> 'required|mimes:png,jpg',
+            'description'=> 'required|max:100',
+            'categorie'=> 'required',
+            'image'=> 'nullable|mimes:png,jpg',
         ];
     }
 }
