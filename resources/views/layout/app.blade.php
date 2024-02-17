@@ -1,279 +1,243 @@
 
 <!doctype html>
-<html lang="zxx">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <!-- Favicon icon-->
+      <link rel="apple-touch-icon" sizes="180x180" href="{{asset('LOOGO.png')}}" />
+      <link rel="icon" type="image/png" sizes="32x32" href="{{asset('LOOGO.png')}}" />
+      <link rel="icon" type="image/png" sizes="16x16" href="{{asset('LOOGO.png')}}" />
+      <link rel="mask-icon" href="{{asset('LOOGO.png')}}" color="#8b3dff" />
+      <link rel="shortcut icon" href="{{asset('LOOGO.png')}}" />
 
-        <!-- Links of CSS files -->
-        <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
-        <link rel="stylesheet" href="{{asset('assets/css/flaticon.css')}}">
-        <link rel="stylesheet" href="{{asset('assets/css/animate.min.css')}}">
-        <link rel="stylesheet" href="{{asset('assets/css/owl.carousel.min.css')}}">
-        <link rel="stylesheet" href="{{asset('assets/css/owl.theme.default.min.css')}}">
-        <link rel="stylesheet" href="{{asset('assets/css/boxicons.min.css')}}">
-        <link rel="stylesheet" href="{{asset('assets/css/meanmenu.min.css')}}">
-        <link rel="stylesheet" href="{{asset('assets/css/nice-select.min.css')}}">
-        <link rel="stylesheet" href="{{asset('assets/css/fancybox.min.css')}}">
-        <link rel="stylesheet" href="{{asset('assets/css/odometer.min.css')}}">
-        <link rel="stylesheet" href="{{asset('assets/css/magnific-popup.min.css')}}">
-        <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
-        <link rel="stylesheet" href="{{asset('assets/css/dark.css')}}">
-        <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
-      
-        <title>Negoce Group </title>
+      <!-- Libs CSS -->
+      <link href="assets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet" />
+      <link href="assets/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
 
-        <link rel="icon" type="image/png" href="{{ asset('LOOGO.png') }}">
-    </head>
- <body class="startup-it-agency-color-css">
+      <!-- Scroll Cue -->
+      <link rel="stylesheet" href="assets/libs/scrollcue/scrollCue.css" />
 
-        <!-- Start Navbar Area -->
-        <div class="navbar-area navbar-area-with-startup-it-agency">
-            <div class="dibiz-responsive-nav">
-                <div class="container-fluid">
-                    <div class="dibiz-responsive-menu">
-                        <div class="logo">
-                            <a href="index.html">
-                                <img src="{{ asset('LOOGO.png') }}" class="main-logo" alt="logo" style="height:40px;">
-                                <img src="{{ asset('LOOGO.png') }}" class="white-logo" alt="logo" style="height:40px;">
-                            </a>
-                        </div>
-                    </div>
-                </div>
+      <!-- Box icons -->
+      <link rel="stylesheet" href="assets/fonts/css/boxicons.min.css" />
+
+      <!-- Theme CSS -->
+      <link rel="stylesheet" href="assets/css/theme.min.css" />
+
+      <title>Bienvenue sur negoce bussness</title>
+   </head>
+
+   <body>
+      <!-- Navbar -->
+      <header>
+         <nav class="navbar navbar-expand-lg transparent navbar-transparent navbar-dark">
+            <div class="container px-3">
+               <a class="navbar-brand" href="index.html"><img src="{{asset('LOOGO.png')}}" style="height:30px;" alt /></a>
+               <button class="navbar-toggler offcanvas-nav-btn" type="button">
+                  <i class="bi bi-list"></i>
+               </button>
+               <div class="offcanvas offcanvas-start offcanvas-nav" style="width: 20rem">
+                  <div class="offcanvas-header">
+                     <a href="index.html" class="text-inverse"><img src="{{asset('LOOGO.png')}}" style="height:30px;" alt /></a>
+                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  </div>
+                  <div class="offcanvas-body pt-0 align-items-center">
+                     <ul class="navbar-nav mx-auto align-items-lg-center">
+                        <li class="nav-item">
+                           <a class="nav-link" href="{{route('home')}}" role="button" >Accueil</a>
+
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="{{route('home.service')}}" role="button" >Nos Services</a>
+
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="{{route('home.projets')}}" role="button">Nos Projets</a>
+
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="{{route('home.actualite')}}" role="button">Actualité</a>
+
+                        </li>
+
+                     </ul>
+
+                     @guest
+                     <div class="mt-3 mt-lg-0 d-flex align-items-center">
+                        <a href="{{route('login')}}" class="btn btn-primary mx-2">Se Connecter</a>
+
+                     </div>
+                         @else
+                         <div class="mt-3 mt-lg-0 d-flex align-items-center">
+                            <a href="{{route('admin')}}" class="btn btn-primary mx-2">Mon espace</a>
+
+                         </div>
+                     @endguest
+
+                  </div>
+               </div>
             </div>
+         </nav>
+      </header>
 
-            <div class="dibiz-nav">
-                <div class="container-fluid">
-                    <nav class="navbar navbar-expand-md navbar-light">
-                        <a class="navbar-brand" href="#">
-                            <img src="{{ asset('LOOGO.png') }}" class="main-logo" alt="logo" style="height: 60px;">
-                            <img src="{{ asset('LOOGO.png') }}" class="white-logo" alt="logo">
+      @yield('content')
+      <!-- Footer -->
+      <footer class="pt-7">
+         <div class="container">
+            <!-- Footer 4 column -->
+            <div class="row">
+               <div class="col-xxl-5 col-lg-5 col-md-7">
+                  <div class="mb-7 mb-xl-0">
+                     <div class="mb-4">
+                        <a href="#">
+                           <img src="{{asset('LOOGO.png')}}" alt="logo" style="height: 30px;" class="text-inverse" />
                         </a>
+                     </div>
+                     <p class="mb-5">Nous sommes une agence créativie qui propose des services de développement de solution informatique et d'accompagnement  .</p>
 
-                        <div class="collapse navbar-collapse mean-menu">
-                            <ul class="navbar-nav">
-                                <li class="nav-item"><a href="#" class="nav-link">Accueil</a>
-                                   
-                                </li>
-
-                                <li class="nav-item"><a href="#" class="nav-link">Negoce Group <i class='bx bx-chevron-down'></i></a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item"><a href="#" class="nav-link">Obtenir un devis negos </a></li>
-
-                                        <li class="nav-item"><a href="#" class="nav-link">Prendre rendez-vous</a></li>
-                                    </ul>
-                                </li>
-
-                                <li class="nav-item"><a href="#" class="nav-link">MARKETING<i class='bx bx-chevron-down'></i></a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item"><a href="#" class="nav-link">Obtenir un devis negos</a></li>
-
-                                        <li class="nav-item"><a href="#" class="nav-link">Obtenir un rendez-vous</a></li>
-
-                                        <li class="nav-item"><a href="#" class="nav-link">Mes reservations</a></li>
-
-                                     
-                                    </ul>
-                                </li>
-
-                                <li class="nav-item"><a href="#" class="nav-link">Nos Services</a>
-                              
-                                </li>
-
-                                <li class="nav-item"><a href="#" class="nav-link">Collecte De Fond <i class='bx bx-chevron-down'></i></a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item"><a href="#" class="nav-link">Liste de campagne du PAM </i></a>
-                                        </li>
-
-                                    </ul>
-                                </li>
-
-                                <li class="nav-item"><a href="#" class="nav-link">Actualité</a>
-                             
-                                </li>
-
-                                <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
-                            </ul>
-
-                            <div class="others-option d-flex align-items-center">
-                                <div class="option-item">
-                                    <form class="search-box">
-                                        <input type="text" class="input-search" placeholder="Rechercher">
-                                        <button type="submit">
-                                            <i class='bx bx-search'></i>
-                                        </button>
-                                    </form>
-                                </div>
-                                <div class="option-item">
-                                    <a href="#" class="default-btn">Devis</a>
-                                </div>
-                                
-                            </div>
+                     <form class="needs-validation" novalidate>
+                        <h5 class="mb-3">S'inscrire aux NewsLetter</h5>
+                        <div class="row g-2">
+                           <div class="col-lg-9 col-8">
+                              <label for="subscribeEmail" class="visually-hidden">Email</label>
+                              <input type="email" class="form-control" id="subscribeEmail" placeholder="Email" required />
+                              <div class="invalid-feedback">Please enter email.</div>
+                           </div>
+                           <div class="col-lg-3 col-4">
+                              <div>
+                                 <button type="submit" class="btn btn-primary">S'inscrire</button>
+                              </div>
+                           </div>
                         </div>
-                    </nav>
-                </div>
+                     </form>
+                  </div>
+               </div>
+               <div class="offset-xxl-1 col-xxl-6 col-lg-6 offset-md-1 col-md-4">
+                  <div class="row" id="ft-links">
+                     <div class="col-lg-4 col-12">
+                        <div class="position-relative">
+                           <div class="mb-3 pb-2 d-flex justify-content-between border-bottom border-bottom-lg-0">
+                              <h5>Nos Ressources</h5>
+                              <a
+                                 class="d-block d-lg-none stretched-link text-inherit"
+                                 data-bs-toggle="collapse"
+                                 href="#collapseLanding"
+                                 role="button"
+                                 aria-expanded="false"
+                                 aria-controls="collapseLanding">
+                                 <i class="bi bi-chevron-down"></i>
+                              </a>
+                           </div>
+                           <div class="collapse d-lg-block" id="collapseLanding" data-bs-parent="#ft-links">
+                              <ul class="list-unstyled mb-0 py-3 py-lg-0">
+                                 <li class="mb-2">
+                                    <a href="#" class="text-decoration-none text-reset">Accueil</a>
+                                 </li>
+                                 <li class="mb-2">
+                                    <a href="#!" class="text-decoration-none text-reset">Nos Services</a>
+                                 </li>
+
+                                 <li class="mb-2">
+                                    <a href="#!" class="text-decoration-none text-reset">Collecte de fond </a>
+                                 </li>
+
+                                 <li class="mb-2">
+                                    <a href="#!" class="text-decoration-none text-reset">Actualités </a>
+                                 </li>
+
+
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 col-12">
+                        <div class="mb-3 pb-2 d-flex justify-content-between border-bottom border-bottom-lg-0 position-relative">
+                           <h5>Service</h5>
+                           <a
+                              class="d-block d-lg-none stretched-link text-inherit"
+                              data-bs-toggle="collapse"
+                              href="#collapseAccounts"
+                              role="button"
+                              aria-expanded="false"
+                              aria-controls="collapseAccounts">
+                              <i class="bi bi-chevron-down"></i>
+                           </a>
+                        </div>
+                        <div class="collapse d-lg-block" id="collapseAccounts" data-bs-parent="#ft-links">
+                           <ul class="list-unstyled mb-0 py-3 py-lg-0">
+                              <li class="mb-2">
+                                 <a href="#" class="text-decoration-none text-reset">Accompagnement</a>
+                              </li>
+                              <li class="mb-2">
+                                 <a href="#" class="text-decoration-none text-reset">Développement informatique</a>
+                              </li>
+                              <li class="mb-2">
+                                 <a href="forget-password.html" class="text-decoration-none text-reset">Marketing digital</a>
+                              </li>
+
+
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 col-12">
+                        <div class="mb-3 pb-2 d-flex justify-content-between border-bottom border-bottom-lg-0 position-relative">
+                           <h5>Contact</h5>
+                           <a
+                              class="d-block d-lg-none stretched-link text-inherit"
+                              data-bs-toggle="collapse"
+                              href="#collapseResources"
+                              role="button"
+                              aria-expanded="false"
+                              aria-controls="collapseResources">
+                              <i class="bi bi-chevron-down"></i>
+                           </a>
+                        </div>
+                        <div class="collapse d-lg-block" id="collapseResources" data-bs-parent="#ft-links">
+                           <ul class="list-unstyled mb-0 py-3 py-lg-0">
+                              <li class="mb-2">
+                                 <a href="docs/index.html" class="text-decoration-none text-reset">negocegroup@gmail.com</a>
+                              </li>
+                              <li class="mb-2">
+                                 <a href="#!" class="text-decoration-none text-reset">+2250767647792</a>
+                              </li>
+                              <li class="mb-2">
+                                 <a href="#" class="text-decoration-none text-reset">FAQ</a>
+                              </li>
+
+                              <li class="mb-2">
+                                <a href="#" class="text-decoration-none text-reset">Terme et condition</a>
+                             </li>
+
+
+
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </div>
+         </div>
 
-            <div class="others-option-for-responsive">
-                <div class="container">
-                    <div class="dot-menu">
-                        <div class="inner">
-                            <div class="circle circle-one"></div>
-                            <div class="circle circle-two"></div>
-                            <div class="circle circle-three"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="container">
-                        <div class="option-inner">
-                            <div class="others-option d-flex align-items-center">
-                                <div class="option-item">
-                                    <form class="search-box">
-                                        <input type="text" class="input-search" placeholder="Chercher">
-                                        <button type="submit">
-                                            <i class='bx bx-search'></i>
-                                        </button>
-                                    </form>
-                                </div>
-                                <div class="option-item">
-                                    <a href="#" class="default-btn">Un Devis</a>
-                                </div>
-                                <div class="option-item">
-                                    <div class="switch-box">
-                                        <label id="switch" class="switch">
-                                            <input type="checkbox" onchange="toggleTheme()" id="slider">
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Navbar Area -->
+      </footer>
+      <!-- Scroll top -->
+      <div class="btn-scroll-top">
+         <svg class="progress-square svg-content" width="100%" height="100%" viewBox="0 0 40 40">
+            <path d="M8 1H32C35.866 1 39 4.13401 39 8V32C39 35.866 35.866 39 32 39H8C4.13401 39 1 35.866 1 32V8C1 4.13401 4.13401 1 8 1Z" />
+         </svg>
+      </div>
+      <!-- Libs JS -->
+      <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="assets/libs/simplebar/dist/simplebar.min.js"></script>
+      <script src="assets/libs/headhesive/dist/headhesive.min.js"></script>
 
-         @yield('content')
+      <!-- Theme JS -->
+      <script src="assets/js/theme.min.js"></script>
 
-           <!-- Start Footer Area -->
-        <footer class="footer-area it-footer-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="single-footer-widget">
-                            <a href="index.html" class="logo">
-                                <img src="{{ asset('LOOGO.png') }}" alt="logo">
-                            </a>
-                            <p>
-                                Une équipe
-                                Nous travaillons comme une seule équipe mondiale, à la fois les uns avec les autres et avec nos clients, pour diriger notre énergie collective vers la réalisation de l'extraordinaire.</p>
-                            <ul class="social-link">
-                                <li><a href="#" class="d-block" target="_blank"><i class='bx bxl-facebook'></i></a></li>
-                                <li><a href="#" class="d-block" target="_blank"><i class='bx bxl-twitter'></i></a></li>
-                                <li><a href="#" class="d-block" target="_blank"><i class='bx bxl-instagram'></i></a></li>
-                                <li><a href="#" class="d-block" target="_blank"><i class='bx bxl-linkedin'></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-6 col-sm-6">
-                        <div class="single-footer-widget ps-5">
-                            <h3>Autres pages</h3>
-
-                            <ul class="footer-links-list">
-                                <li><a href="#">Accueil</a></li>
-                                <li><a href="#">A Propos</a></li>
-                                <li><a href="#">Services</a></li>
-                                <li><a href="#">Projets</a></li>
-                                <li><a href="#">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-6 col-sm-6">
-                        <div class="single-footer-widget ps-5">
-                            <h3>Liens utiles</h3>
-
-                            <ul class="footer-links-list">
-                                <li><a href="#"> Stratégie de marketing</a></li>
-                                <li><a href="#">Design d'intérieur</a></li>
-                                <li><a href="#">Services numériques</a></li>
-                                <li><a href="#">La conception des produits</a></li>
-                                <li><a href="#">Marketing social</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-6 col-sm-6">
-                        <div class="single-footer-widget ps-5">
-                            <h3>SUPPORT</h3>
-
-                            <ul class="footer-links-list">
-                                <li><a href="#">Politique de confidentialité</a></li>
-                                <li><a href="#">Termes et utilisations</a></li>
-                                <li><a href="#">Centre de soutien</a></li>
-                                <li><a href="#">Communauté</a></li>
-                                <li><a href="#">FAQ</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="single-footer-widget ps-5">
-                            <h3>CONTACT NEGOCE</h3>
-
-                            <ul class="footer-contact-info">
-                                <li>
-                                    <i class='bx bx-map'></i>
-                                    <span>LocaLISATION:</span>
-                                   ABIDJAN COTE D'IVOIRE
-                                </li>
-                                <li>
-                                    <i class='bx bx-envelope'></i>
-                                    <span>EMAIL:</span>
-                                    <a href="/cdn-cgi/l/email-protection#f79f929b9b98b7939e959e8dd994989a"><span class="__cf_email__" data-cfemail="87efe2ebebe8c7e3eee5eefda9e4e8ea">[email&#160;protected]</span></a>
-                                </li>
-                                <li>
-                                    <i class='bx bxs-phone'></i>
-                                    <span>TELEPHONE:</span>
-                                    <a href="tell:098765432150">+2250767647792</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer-bottom-area">
-                <p>Tous droits réservés  <a href="#" target="_blank">NEGOCE GROUP</a></p>
-            </div>
-        </footer>
-        <!-- End Footer Area -->
-
-        <div class="go-top"><i class='bx bx-up-arrow-alt'></i></div>
-
-        <!-- Links of JS files -->
-       
-        
-        </script><script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/js/appear.min.js"></script>
-        <script src="assets/js/odometer.min.js"></script>
-        <script src="assets/js/magnific-popup.min.js"></script>
-        <script src="assets/js/fancybox.min.js"></script>
-        <script src="assets/js/owl.carousel.min.js"></script>
-        <script src="assets/js/meanmenu.min.js"></script>
-        <script src="assets/js/nice-select.min.js"></script>
-        <script src="assets/js/sticky-sidebar.min.js"></script>
-        <script src="assets/js/wow.min.js"></script>
-        <script src="assets/js/form-validator.min.js"></script>
-        <script src="assets/js/contact-form-script.js"></script>
-        <script src="assets/js/ajaxchimp.min.js"></script>
-        <script src="assets/js/main.js"></script>
-        @include('flashy::message')
-    </body> 
-
-
+      <script src="assets/libs/jarallax/dist/jarallax.min.js"></script>
+      <script src="assets/js/vendors/jarallax.js"></script>
+      <script src="assets/libs/scrollcue/scrollCue.min.js"></script>
+      <script src="assets/js/vendors/scrollcue.js"></script>
+      @include('sweetalert::alert')
+   </body>
 </html>

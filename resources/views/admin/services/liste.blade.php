@@ -13,7 +13,7 @@
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">accueil</a></li>
-            <li class="breadcrumb-item active">Catégories</li>
+            <li class="breadcrumb-item active">Services</li>
           </ol>
         </div>
       </div>
@@ -25,16 +25,24 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
-        
+
 
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Liste des catégories emploi </h3>
+                <div class="row">
+                    <div class="col-md-10">
+                        <h3 class="card-title">Liste des services </h3>
+                    </div>
+                    <div class="col-md-2">
+                        <a class="btn btn-outline-dark" href="{{route('service.create')}}">Enregistrer</a>
+                    </div>
+                </div>
+
             </div>
             <!-- /.card-header -->
             <div class="card-body">
               <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6">
-                <div class="dt-buttons btn-group flex-wrap">           
+                <div class="dt-buttons btn-group flex-wrap">
                        </div>
                       </div>
                       <div class="col-sm-12 col-md-6">
@@ -44,60 +52,37 @@
                           </div>
                           <div class="row">
                        <div class="col-sm-12">
-                
+
                 <table id="example" class="table table-bordered table-striped dataTable dtr-inline collapsed">
                 <thead>
                 <tr>
-                  <th class="sorting sorting_asc"  aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Designation</th>
+                  <th class="sorting sorting_asc">Designation</th>
                   <th class="sorting">Description</th>
-                  <th class="sorting">Popularité</th>
-                  <th class="sorting">Status</th>
+                  <th class="sorting">Image</th>
                   <th class="sorting">Action</th>
                 </tr>
                 </thead>
                 <tbody>
-                  @foreach ($categoryJobRessource as  $value)
-                    
-                 
+                  @foreach ($allServices as  $value)
                 <tr class="odd">
-                  <td class="dtr-control sorting_1" tabindex="0">{{ $value->name }}</td>
+                  <td class="dtr-control sorting_1" tabindex="0">{{ $value->title }}</td>
                   <td>{{ $value->description }}</td>
 
                   <td>
-                    @if($value->popular == 1)
-                    <span class="badge bg-success">publié</span>
-                 
-                  @elseif($value->popular == 0)
-                  <span class="badge bg-warning">En attante</span>
-                  @endif
+                    <img src="{{asset('services/images/'.$value->image)}}" style="height:100px;" alt="">
                 </td>
                   <td>
-                    @if($value->publish_at == 1)
-                    <span class="badge bg-success">publié</span>
-                 
-                  @elseif($value->publish_at == 0)
-                  <span class="badge bg-warning">En attante</span>
-                  @endif
-                </td>
+                  <a href="{{ route('service.edit', $value->id)}}" class="btn btn-primary"> Editer</a>
+                  <a href="{{ route('service.destroy', $value->id)}}" class="btn btn-danger"> Supprimer</a>
 
-                  <td>
-                  <a href="{{ route('categoryjob.edit', $value->id)}}" class="text-dark"> <i class="fa-solid fa-pen-to-square"></i></a>
-                  <a href="{{ route('category.destroy', $value->id)}}" class="text-dark"> <i class="fa-solid fa-trash-can"></i></a>
-                  
                   </td>
                 </tr>
 
                 @endforeach
                </tbody>
-             
               </table>
-            
             </div>
-          
           </div>
-          
-       
-        
         </div>
             </div>
             <!-- /.card-body -->

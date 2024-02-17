@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\AcutaliteController;
+use App\Http\Controllers\Admin\ActualiteController;
 use App\Http\Controllers\Admin\AdminController;
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Home\HomeController;
-use App\Http\Controllers\Admin\PrestationController;
-use App\Http\Controllers\Admin\TransactionController;
+use App\Http\Controllers\ProjetController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,16 +20,23 @@ use App\Http\Controllers\Admin\TransactionController;
 |
 */
 
-
+//routes administrateurs
+Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 Route::resources([
-    'prestation' => PrestationController::class,
-    'transaction' => TransactionController::class
+    'service' => ServiceController::class,
+    'actualite' => ActualiteController::class,
+    'users'=>  UserController::class,
+    'projet' =>ProjetController::class
 ]);
 
-Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 
+//routes visiteurs
 Route::get('/', [HomeController::class, 'index'])->name('home');
-
+Route::get('/nos-actualites', [HomeController::class, 'actualites'])->name('home.actualite');
+Route::get('/nos-services', [HomeController::class, 'service'])->name('home.service');
+Route::get('/nos-projet', [HomeController::class, 'projet'])->name('home.projets');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/contact/post', [HomeController::class, 'contactsave'])->name('contact.poste');
-Route::get('/detail/prestation/{slug}', [HomeController::class, 'prestationDetail'])->name('prestation.detail');
+
+Auth::routes();
+

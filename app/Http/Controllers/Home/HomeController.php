@@ -3,44 +3,55 @@
 namespace App\Http\Controllers\Home;
 
 use notify;
-use App\Models\Contact;
-use App\Models\Prestation;
-use App\Models\Transaction;
+use App\Models\Project;
+use App\Models\Service;
+use App\Mail\ContactMail;
+use App\Models\Actualite;
 use Illuminate\Http\Request;
-use MercurySeries\Flashy\Flashy;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\ContactRequest;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class HomeController extends Controller
 {
     /**
      * Display a listing of the resource.
+     * DB::select("select top 5 * from actualites  order by created_at desc")
      */
     public function index()
-    {   
-        $prestations = Prestation::all();
-        $transactions =Transaction::all();
-        return view('welcome', compact('prestations', 'transactions'));
+    {
+        return view('welcome', [
+            'allProjets'=> Project::take(3)->orderByDesc('created_at')->get(),
+            'allActualites'=> DB::select("SELECT * from actualites order by rand() desc limit 3")
+        ]);
+    }
+
+    public function actualites() {
+        return view('home.blog', [
+            'allActualites'=> Actualite::all()
+        ]);
     }
 
     public function contact() {
         return view('contact');
     }
 
-    public function prestationDetail($slug) {
-
-        $ressource =  Prestation::where('slug', $slug)->first();
-       
-        return view('home.prestationdetail', compact('ressource'));
+    public function projet() {
+        return view('home.projet', [
+            'allProjects'=> Project::all()
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
+
+
+    public function service()
+        {
+        return view('home.services', [
+            'allServices'=> Service::all()
+        ]);
+        }
 
     /**
      * Store a newly created resource in storage.
@@ -48,45 +59,10 @@ class HomeController extends Controller
     public function contactsave(ContactRequest $request)
     {
         $data = $request->input();
-
-        Contact::create([
-        'name' => $data['name'],
-        'email' => $data['email'],
-        'message' => $data['message']
-        ]);
-        Flashy::message('Message envoyé avec succes!', 'http://your-awesome-link.com');
+        Mail::to('kgsdev8@gmail.com')->send(new ContactMail($data['name'], $data['name'], $data['email'], $data['message']));
+        Alert::success('Message envoyé', 'Votre message a été envoyé avec success');
         return redirect()->back();
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }

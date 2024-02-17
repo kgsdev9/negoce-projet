@@ -96,7 +96,7 @@
           <img src="{{ asset('LOOGO.png')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Carriere Pro Plus </a>
+          <a href="#" class="d-block">NEGOCE GROUP </a>
         </div>
       </div>
 
@@ -104,7 +104,6 @@
       <div class="form-inline">
 
       </div>
-
       <!-- Sidebar Menu -->
       @include('admin.slide-bar')
       <!-- /.sidebar-menu -->
@@ -119,7 +118,7 @@
 
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2022-2023 <a href="#">Carriere Pro Plus </a>.</strong>
+    <strong>Copyright &copy; 2022-2023 <a href="#">NEGOCE GROUP </a>.</strong>
     Tous droits réservés.
     <div class="float-right d-none d-sm-inline-block">
       <b>Version de notre application</b> 1.0
