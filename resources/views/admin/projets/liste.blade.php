@@ -8,12 +8,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Liste des Projets </h1>
+          <h1>Liste des produits </h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">accueil</a></li>
-            <li class="breadcrumb-item active">Projets</li>
+            <li class="breadcrumb-item active">Produits</li>
           </ol>
         </div>
       </div>
@@ -73,7 +73,11 @@
                 </td>
                   <td>
                   <a href="{{ route('projet.edit', $value->id)}}" class="btn btn-primary"> Editer</a>
-                  <a href="{{ route('projet.destroy', $value->id)}}" class="btn btn-danger"> Supprimer</a>
+                  <form action="{{ route('projet.destroy', $value->id)}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-danger" type="submit">Supprimer</button>
+                </form>
 
                   </td>
                 </tr>

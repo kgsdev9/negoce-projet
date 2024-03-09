@@ -4,7 +4,7 @@
   <div class="content">
     <div class="card mb-4">
       <div class="card-header">
-        <h3 class="mb-0">Edition du projet  </h3>
+        <h3 class="mb-0">Edition un produit  </h3>
       </div>
         <form action="{{route('projet.update', $ressource->id)}}" method="post" enctype="multipart/form-data">
          @csrf

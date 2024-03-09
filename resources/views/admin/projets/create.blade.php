@@ -9,7 +9,7 @@
     <div class="card mb-4">
       <!-- Card header -->
       <div class="card-header">
-        <h3 class="mb-0">Nouveau projet </h3>
+        <h3 class="mb-0">Nouveau Produit  </h3>
       </div>
       <!-- Card body -->
         <form action="{{route('projet.store')}}" method="post" enctype="multipart/form-data">

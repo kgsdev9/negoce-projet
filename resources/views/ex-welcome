@@ -1,606 +1,961 @@
 
-        @extends('layout.app')
-
-        @section('content')
-
-        <!-- Start IT Main Banner Area -->
-        <section class="it-main-banner-area">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-12">
-                        <div class="it-banner-content">
-                            <h1 class="wow animate__animated animate__fadeInLeft" data-wow-delay="00ms" data-wow-duration="1000ms">Une agence de négociation à service complet</h1>
-                            <p class="wow animate__animated animate__fadeInLeft" data-wow-delay="200ms" data-wow-duration="1000ms">Obtenez une experise complete dans la vente , le marketing , la communication avec Negoce.</p>
-                            <div class="btn-box wow animate__animated animate__fadeInLeft" data-wow-delay="300ms" data-wow-duration="1000ms">
-                                <div class="d-flex align-items-center">
-                                    <a href="#" class="default-btn">Nous Contacter</a>
-                                    <a href="https://www.youtube.com/watch?v=Q5q1SQYfoMg" class="video-btn popup-youtube"><i class="flaticon-play-button"></i>Qui Somme Nous ?</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-12">
-                        <div class="it-banner-image wow animate__animated animate__fadeInRight" data-wow-delay="300ms" data-wow-duration="1000ms">
-                            <img src="{{ asset('assets/affaire.jpeg') }}" alt="image">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="it-banner-shape1">
-                <img src="assets/img/startup-it-agency/banner/shape1.png" alt="image">
-            </div>
-            <div class="it-banner-shape2">
-                <img src="assets/img/startup-it-agency/banner/shape2.png" alt="image">
-            </div>
-            <div class="it-banner-shape3">
-                <img src="assets/img/startup-it-agency/banner/shape3.png" alt="image">
-            </div>
-        </section>
-        <!-- End IT Main Banner Area -->
-
-        <div class="it-services-area-bg-transparent pt-100 pb-75">
-            <div class="container">
-                <div class="startup-it-agency-title">
-                    <span>Negoce</span>
-                    <h2>Nous fournissons les meilleurs services</h2>
-                    <p>Nous fournissons différentes solutions et services pour une meilleure gestion de bien .
-                        Nettoyage industriel et fin de chantier, Entretien et nettoyage de bureaux et surfaces commerciales, Démoustication Dératisation et Désinsectisation, Livraison de consommable hygiénique et de matériel..</p>
-                </div>
-
-                <div class="row justify-content-center">
-
-                    @foreach ($prestations  as $value )
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="it-services-card">
-                            <div class="services-image">
-                                <a href="#"><img src="{{asset('prestations/'.$value->image) }}" alt="image"></a>
-                            </div>
-                            <div class="services-content">
-
-                                <h3>
-                                    <a href="#">{{ Str::limit($value->title, 16)}}</a>
-                                </h3>
-                                <p>{{ Str::limit($value->mini_description, 84) }}</p>
-                                <a href="{{ route('prestation.detail', $value->slug) }}" class="services-btn">Lire la suite </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    @endforeach
-
-                    <i class="bx bx-whatsapp"></i>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- Start IT About Area -->
-        <div class="it-about-area pb-100">
-            <div class="container">
-                <div class="row justify-content-center align-items-center">
-                    <div class="col-lg-6 col-md-12">
-                        <div class="it-about-image">
-                            <img src="{{ asset('IMAGE/Entreprise-africaine-julief514-iStock.jpg') }}" alt="image">
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-12">
-                        <div class="it-about-content">
-                            <span>Negoce</span>
-                            <h3>Toute solution de travail liée à l'informatique peut être facilement trouvée chez nous</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit illo ducimus vero, vero corporis voluptates beatae pariatur quisquam ess voluptatibus quia velit numquam esse porro ipsum dolor, sit amet consectetur.</p>
-                            <div class="row justify-content-center">
-                                <div class="col-lg-6 col-sm-6">
-                                    <div class="inner-card">
-                                        <div class="icon">
-                                            <img src="assets/img/startup-it-agency/about/icon1.svg" alt="image">
-                                        </div>
-                                        <h4>Developpement de solution infomatique</h4>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-sm-6">
-                                    <div class="inner-card">
-                                        <div class="icon">
-                                            <img src="assets/img/startup-it-agency/about/icon2.svg" alt="image">
-                                        </div>
-                                        <h4>Integration de solution informatique</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <ul class="list">
-                                <li><i class='bx bx-check-circle'></i> Nous ecoutons vos propositions </li>
-                                <li><i class='bx bx-check-circle'></i> Nous effectuons un devis de qualité imbatable</li>
-                                <li><i class='bx bx-check-circle'></i> Nous Construsons quelque chose d'unique</li>
-                            </ul>
-                            <div class="about-btn">
-                                <a href="#" class="default-btn">Nous Contactez</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End IT About Area -->
-
-
-
-
-
-        <!-- Start Case Study Area -->
-        <div class="case-study-area pb-500">
-            <div class="startup-it-agency-title">
-                <span>Negoce</span>
-                <h2>Meilleure transaction </h2>
-                <p>Nous travaillons avec les personnes du monde entier qui nous font confiance en effectuant des transactions avec nous.</p>
-            </div>
-            <div class="container-fluid">
-                <div class="case-study-slides owl-carousel owl-theme">
-
-                   @foreach ($transactions as $value)
-                   <div class="case-study-card">
-                    <div class="case-study-image">
-                        <a href="#"><img src="{{ asset('transactions/'.$value->image) }}" alt="image" style="height:250px;"></a>
-                    </div>
-                    <div class="case-study-content">
-                        <span>Marketing / Design</span>
-                        <h3>
-                            <a href="#">Web development</a>
-                        </h3>
-                    </div>
-                </div>
-                   @endforeach
-
-
-                </div>
-            </div>
-        </div>
-        <!-- End Case Study Area -->
-
-        <section class="what-we-do-area ptb-100">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-12">
-                        <div class="what-we-do-content">
-                            <span class="sub-title">CE QUE NOUS FAISONS</span>
-                            <h2>WNous aidons à la croissance du site Web avec un visiteur de niveau supérieur</h2>
-                            <p>Attirer. Convertir. Transformer. Fidéliser. Tels sont les objectifs que vous devez atteindre dans votre stratégie digitale.
-
-                                Nous aidons nos clients à développer leur chiffre d’affaires grâce à la transformation digitale du marketing et des ventes. Délivrer le bon message au bon moment et à la bonne personne. Une combinaison mêlant stratégie efficiente et utilisation de la data..</p>
-                            <div class="skills-item">
-                                <div class="skills-header">
-                                    <h4 class="skills-title">Marketing numérique &amp; référencement </h4>
-                                    <div class="skills-percentage">
-                                        <div class="count-box">95%</div>
-                                    </div>
-                                </div>
-                                <div class="skills-bar">
-                                    <div class="bar-inner"><div class="bar progress-line" data-width="95"></div></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-12">
-                        <div class="what-we-do-content-accordion">
-                            <ul class="accordion">
-                                <li class="accordion-item">
-                                    <a class="accordion-title active" href="javascript:void(0)">
-                                        <i class="flaticon-plus"></i>
-                                        Optimisation des médias sociaux
-                                    </a>
-
-                                    <div class="accordion-content show">
-                                        <p>Notre equipe de marketing est à votre disposition pour vous fournir une assistance technique 100% Fiable, avec nous satisfait ou remboursé.</p>
-                                    </div>
-                                </li>
-
-                                <li class="accordion-item">
-                                    <a class="accordion-title" href="javascript:void(0)">
-                                        <i class="flaticon-plus"></i>
-                                        Génération de contenu
-                                    </a>
-
-                                    <div class="accordion-content">
-                                        <p>Vous aveza besoin de texte et message captivant l'attention du public sur votre site web nous mettons à votre disposition nos redacteurs pour cette tache.</p>
-                                    </div>
-                                </li>
-
-                                <li class="accordion-item">
-                                    <a class="accordion-title" href="javascript:void(0)">
-                                        <i class="flaticon-plus"></i>
-                                        Services de paiement par clic
-                                    </a>
-
-                                    <div class="accordion-content">
-                                        <p>Avez vous besoin d'un systeme de messagerie et de paiement nos developpeurs sont à vos disposition pour fournir à vos clients un espace de paiement .</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- Start Team Area -->
-        <div class="it-team-area pt-100 pb-75">
-            <div class="container">
-
-                <div class="row justify-content-center">
-                    <div class="startup-it-agency-title">
-                        <span>Client reviews</span>
-                        <h1>Notre Equipe</h1>
-                        <p>
-                            Une équipe
-                            Nous travaillons comme une seule équipe mondiale, à la fois les uns avec les autres et avec nos clients, pour diriger notre énergie collective vers la réalisation de l'extraordinaire.</p>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="it-team-card">
-                            <div class="image">
-                                <img src="assets/img/startup-it-agency/team/team1.jpg" alt="team-image">
-
-
-                            </div>
-                            <div class="content">
-                                <h3>JC BOSS</h3>
-                                <span>Fondateur de NEGOCE</span>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="it-team-card">
-                            <div class="image">
-                                <img src="assets/img/startup-it-agency/team/team2.jpg" alt="team-image">
-
-
-                            </div>
-                            <div class="content">
-                                <h3>DAVID KOUDIO</h3>
-                                <span>CHEF MONTEUR DE PROJET</span>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="it-team-card">
-                            <div class="image">
-                                <img src="assets/img/startup-it-agency/team/team3.jpg" alt="team-image">
-
-
-                            </div>
-                            <div class="content">
-                                <h3>ELISE KS</h3>
-                                <span>DEVELOPEUSE WEB</span>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="it-team-card">
-                            <div class="image">
-                                <img src="assets/img/startup-it-agency/team/team4.jpg" alt="team-image">
-
-
-                            </div>
-                            <div class="content">
-                                <h3>Robert FRANCK</h3>
-                                <span>JURISTE</span>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Team Area -->
-
-        <div class="dibiz-features-area">
-            <div class="container">
-                <div class="dibiz-features-inner-box">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="dibiz-features-box wow animate__ animate__fadeInUp animated" data-wow-delay="100ms" data-wow-duration="1000ms" style="visibility: visible; animation-duration: 1000ms; animation-delay: 100ms; animation-name: fadeInUp;">
-                                <div class="features-image">
-                                    <a href="#">
-                                        <img data-cfsrc="{{asset('assets/img/more-home/features/features-4.png')}}" alt="image" src="{{asset('assets/img/more-home/features/features-4.png')}}"></a>
-                                </div>
-                                <h3>
-                                    <a href="#">Analyse marketing
-                                    </a>
-                                </h3>
-                                <p>Une étude marketing est conditionnée par l’utilisation d’outils d’analyse marketing. Ces outils d’analyse vous permettent d’acquérir des données macro-économiques et micro-économiques. On distingue les outils d’audit destinés aux marchés et les outils d’audits destinés aux produits.</p>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="dibiz-features-box wow animate__ animate__fadeInDown animated" data-wow-delay="200ms" data-wow-duration="1000ms" style="visibility: visible; animation-duration: 1000ms; animation-delay: 200ms; animation-name: fadeInDown;">
-                                <div class="features-image">
-                                    <a href="#"><img data-cfsrc="{{asset('assets/img/more-home/features/features-5.png')}}" alt="image" src="{{asset('assets/img/more-home/features/features-5.png')}}"></a>
-                                </div>
-                                <h3>
-                                    <a href="#">Optimisation du site Web
-                                    </a>
-                                </h3>
-                                <p>L'optimisation pour les moteurs de recherche, aussi connue sous le sigle SEO, inclut l'ensemble des techniques qui visent à améliorer le positionnement d'une page</p>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="dibiz-features-box wow animate__ animate__fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1000ms" style="visibility: visible; animation-duration: 1000ms; animation-delay: 300ms; animation-name: fadeInUp;">
-                                <div class="features-image">
-                                    <a href="#"><img data-cfsrc="{{asset('assets/img/more-home/features/features-6.png')}}" alt="image" src="{{asset('assets/img/more-home/features/features-4.png')}}"></a>
-                                </div>
-                                <h3>
-                                    <a href="#">Publicité par e-mail</a>
-                                </h3>
-                                <p>Le marketing par courriel, l'email ou le mailing est un excellent outil pour communiquer avec nos clients. Le marketing par e-mail est très puissant et s'il est utilisé correctement, il peut donner des résultats de conversion réussis. Nous offrons à l'utilisateur un contenu de qualité et une valeur personnalisée.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-          <!-- Start Feedback Area -->
-          <div class="it-feedback-area ptb-100">
-            <div class="container">
-                <div class="startup-it-agency-title">
-                    <span>Nos Clients Temoignent</span>
-                    <h2>
-                        Commentaires de nos clients</h2>
-                    <p>   Honnêteté et ouverture Nous avons une profonde honnêteté intellectuelle et la franchise de le dire comme si c'était dans un langage simple que le client comprend
-                        </p>
-                </div>
-
-                <div class="it-feedback-slides owl-carousel owl-theme">
-                    <div class="it-feedback-card">
-                        <div class="info">
-                            <img src="{{ asset('avatar/Africanchief_person_man_avatar_african_2856.png') }}" alt="image">
-                            <div class="title">
-                                <h3>MADAME BROU</h3>
-                                <span>Commercante</span>
-                            </div>
-                        </div>
-                        <p>“Lorem ipsum do amet consectetur adipisicing perspiciatis soluta aspernatur dolorum sequi quisquam ullam pariatur nihil dolorem cumque excepturi totam.”</p>
-                        <ul class="rating">
-                            <li><i class='bx bxs-star'></i></li>
-                            <li><i class='bx bxs-star'></i></li>
-                            <li><i class='bx bxs-star'></i></li>
-                            <li><i class='bx bxs-star'></i></li>
-                            <li><i class='bx bxs-star'></i></li>
-                        </ul>
-                    </div>
-
-                    <div class="it-feedback-card">
-                        <div class="info">
-                            <img src="{{ asset('avatar/3219868.png') }}" alt="image">
-                            <div class="title">
-                                <h3>Mr Francis Bienvenue</h3>
-                                <span>Entrepreneur</span>
-                            </div>
-                        </div>
-                        <p>“Lorem ipsum do amet consectetur adipisicing perspiciatis soluta aspernatur dolorum sequi quisquam ullam pariatur nihil dolorem cumque excepturi totam.”</p>
-                        <ul class="rating">
-                            <li><i class='bx bxs-star'></i></li>
-                            <li><i class='bx bxs-star'></i></li>
-                            <li><i class='bx bxs-star'></i></li>
-                            <li><i class='bx bxs-star'></i></li>
-                            <li><i class='bx bxs-star'></i></li>
-                        </ul>
-                    </div>
-
-                    <div class="it-feedback-card">
-                        <div class="info">
-                            <img src="{{ asset('avatar/gettyimages-1331335299-612x612.jpg') }}" alt="image">
-                            <div class="title">
-                                <h3>Kouadio Franck</h3>
-                                <span>Entrepreneur</span>
-                            </div>
-                        </div>
-                        <p>“Lorem ipsum do amet consectetur adipisicing perspiciatis soluta aspernatur dolorum sequi quisquam ullam pariatur nihil dolorem cumque excepturi totam.”</p>
-                        <ul class="rating">
-                            <li><i class='bx bxs-star'></i></li>
-                            <li><i class='bx bxs-star'></i></li>
-                            <li><i class='bx bxs-star'></i></li>
-                            <li><i class='bx bxs-star'></i></li>
-                            <li><i class='bx bxs-star'></i></li>
-                        </ul>
-                    </div>
-
-                    <div class="it-feedback-card">
-                        <div class="info">
-                            <img src="{{ asset('avatar/portrait-d-un-africain-avec-cravate-avatar-homme-affaires-triste-jeune-politique-illustration-vectorielle-plate-223411153.webp') }}" alt="image">
-                            <div class="title">
-                                <h3>Josie Elvis</h3>
-                                <span>Developpeur Mobile</span>
-                            </div>
-                        </div>
-                        <p>“Lorem ipsum do amet consectetur adipisicing perspiciatis soluta aspernatur dolorum sequi quisquam ullam pariatur nihil dolorem cumque excepturi totam.”</p>
-                        <ul class="rating">
-                            <li><i class='bx bxs-star'></i></li>
-                            <li><i class='bx bxs-star'></i></li>
-                            <li><i class='bx bxs-star'></i></li>
-                            <li><i class='bx bxs-star'></i></li>
-                            <li><i class='bx bxs-star'></i></li>
-                        </ul>
-                    </div>
-
-                    <div class="it-feedback-card">
-                        <div class="info">
-                            <img src="{{ asset('avatar/gettyimages-1331335299-612x612.jpg') }}" alt="image">
-                            <div class="title">
-                                <h3>Kahouo Guy Stephane</h3>
-                                <span>Informaticien Developpeur</span>
-                            </div>
-                        </div>
-                        <p>“Lorem ipsum do amet consectetur adipisicing perspiciatis soluta aspernatur dolorum sequi quisquam ullam pariatur nihil dolorem cumque excepturi totam.”</p>
-                        <ul class="rating">
-                            <li><i class='bx bxs-star'></i></li>
-                            <li><i class='bx bxs-star'></i></li>
-                            <li><i class='bx bxs-star'></i></li>
-                            <li><i class='bx bxs-star'></i></li>
-                            <li><i class='bx bxs-star'></i></li>
-                        </ul>
-                    </div>
-
-
-
-
-
-
-
-
-                </div>
-            </div>
-
-            <div class="it-feedback-shape">
-                <img src="assets/img/startup-it-agency/feedback-shape.png" alt="image">
-            </div>
-        </div>
-        <!-- End Feedback Area -->
-
-        <section class="project-start-area ptb-100">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-12">
-                        <div class="project-start-image">
-                            <img data-cfsrc="{{ asset('avatar/project-start1.png')}}" alt="image" src="{{ asset('avatar/project-start1.png')}}">
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-12">
-                        <div class="project-start-content">
-                            <span class="sub-title">COMMENCER</span>
-                            <h2>Nous aimons démarrer votre projet avec nous</h2>
-                            <p>NBCS travaille aux côtés des institutions et agences gouvernementales pour fournir à ses partenaires une fiabilité totale des transactions et des expéditions de marchandises.</p>
-                            <a href="{{ URL('/contact') }}" class="default-btn" target="_blank">COMMENCER</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="shape2"><img data-cfsrc="{{asset('assets/img/shape/shape2.png')}}" alt="image" src="{{asset('assets/img/shape/shape2.png')}}"></div>
-            <div class="shape3"><img data-cfsrc="{{asset('assets/img/shape/shape3.png')}}" alt="image" src="{{asset('assets/img/shape/shape3.png')}}"></div>
-            <div class="shape5"><img data-cfsrc="{{asset('assets/img/shape/shape5.png')}}" alt="image" src="{{asset('assets/img/shape/shape5.png')}}"></div>
-            <div class="shape6"><img data-cfsrc="{{asset('assets/img/shape/shape6.png')}}" alt="image" src="{{asset('assets/img/shape/shape6.png')}}"></div>
-            <div class="shape7"><img data-cfsrc="{{asset('assets/img/shape/shape7.png')}}" alt="image" src="{{asset('assets/img/shape/shape7.png')}}"></div>
-            <div class="shape13"><img data-cfsrc="{{asset('assets/img/shape/shape13.png')}}" alt="image" src="{{asset('assets/img/shape/shape13.png')}}"></div>
-        </section>
-
-        <!-- Start Blog Area -->
-        <div class="it-blog-area pt-100 pb-75">
-            <div class="container">
-                <div class="startup-it-agency-title">
-                    <span>negoce</span>
-                    <h2>Suivez L'actualité de Negoce</h2>
-                    <p>Suivez l'ensemble de nos actualités politique, economique, digiatale et globale, et soyez informez sur l'evolution de nos activités</p>
-                </div>
-
-                <div class="row justify-content-center">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="it-blog-card">
-                            <div class="blog-image">
-                                <a href="#"><img src="assets/img/startup-it-agency/blog/blog1.jpg" alt="image"></a>
-                            </div>
-                            <div class="blog-content">
-                                <div class="date">
-                                    <b>14</b>
-                                    <span>teste negoce</span>
-                                </div>
-                                <ul class="meta">
-                                    <li><i class='bx bx-user'></i> By <a href="#">admin</a></li>
-                                    <li>/</li>
-                                    <li><i class='bx bx-message-rounded-dots'></i> pas de commentaires</li>
-                                </ul>
-                                <h3>
-                                    <a href="#">Comment la technologie fonctionne-t-elle avec les nouveautés ?</a>
-                                </h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt labore et dolore magna aliqua minim.</p>
-                                <a href="#" class="blog-btn">Lire la suite</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="it-blog-card">
-                            <div class="blog-image">
-                                <a href="#"><img src="assets/img/startup-it-agency/blog/blog2.jpg" alt="image"></a>
-                            </div>
-                            <div class="blog-content">
-                                <div class="date">
-                                    <b>14</b>
-                                    <span>teste negoce</span>
-                                </div>
-                                <ul class="meta">
-                                    <li><i class='bx bx-user'></i> By <a href="#">Negoce</a></li>
-                                    <li>/</li>
-                                    <li><i class='bx bx-message-rounded-dots'></i>Pas de commentaires</li>
-                                </ul>
-                                <h3>
-                                    <a href="#">Comment la technologie fonctionne-t-elle avec les nouveautés ?</a>
-                                </h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt labore et dolore magna aliqua minim.</p>
-                                <a href="#" class="blog-btn">Lire la suite</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="it-blog-card">
-                            <div class="blog-image">
-                                <a href="#"><img src="assets/img/startup-it-agency/blog/blog3.jpg" alt="image"></a>
-                            </div>
-                            <div class="blog-content">
-                                <div class="date">
-                                    <b>14</b>
-                                    <span>teste negoce</span>
-                                </div>
-                                <ul class="meta">
-                                    <li><i class='bx bx-user'></i> By <a href="#">admin</a></li>
-                                    <li>/</li>
-                                    <li><i class='bx bx-message-rounded-dots'></i> No comment</li>
-                                </ul>
-                                <h3>
-                                    <a href="#">Comment la technologie fonctionne-t-elle avec les nouveautés ?</a>
-                                </h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt labore et dolore magna aliqua minim.</p>
-                                <a href="#" class="blog-btn">Lire la suite</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Blog Area -->
-
-
-        <section class="subscribe-area bg-f9f9f9 ptb-100">
-            <div class="container">
-                <div class="subscribe-content">
-                    <span class="sub-title">MISES À JOUR DIBIZ</span>
-                    <h2>Abonnez-vous à notre newsletter</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <form class="newsletter-form" data-bs-toggle="validator" novalidate="true">
-                        <input type="text" class="input-newsletter" placeholder="Entrer votre adresse E-mail" name="EMAIL" required="" autocomplete="off">
-                        <button type="submit" class="default-btn disabled" style="pointer-events: all; cursor: pointer;">Abonnez-vous maintenant</button>
-                        <div id="validator-newsletter" class="form-result"></div>
-                    </form>
-                </div>
-            </div>
-
-            <div class="shape9"><img data-cfsrc="assets/img/shape/shape9.png" alt="image" src="file:///C:/My%20Web%20Sites/NEGOCE/templates.envytheme.com/dibiz/default/assets/img/shape/shape9.png"></div>
-            <div class="shape10"><img data-cfsrc="assets/img/shape/shape10.png" alt="image" src="file:///C:/My%20Web%20Sites/NEGOCE/templates.envytheme.com/dibiz/default/assets/img/shape/shape10.png"></div>
-            <div class="shape11"><img data-cfsrc="assets/img/shape/shape11.png" alt="image" src="file:///C:/My%20Web%20Sites/NEGOCE/templates.envytheme.com/dibiz/default/assets/img/shape/shape11.png"></div>
-            <div class="shape12"><img data-cfsrc="assets/img/shape/shape12.png" alt="image" src="file:///C:/My%20Web%20Sites/NEGOCE/templates.envytheme.com/dibiz/default/assets/img/shape/shape12.png"></div>
-        </section>
-
-      @endsection
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<title>Bienvenue sur negoce busnness</title>
+
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="Webestica.com">
+	<meta name="description" content="Technology and Corporate Bootstrap Theme">
+
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="assets/images/favicon.ico">
+
+	<!-- Google Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com/">
+	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/glightbox/css/glightbox.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/swiper/swiper-bundle.min.css">
+
+	<!-- Theme CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+<!-- Header START -->
+<header class="header-sticky header-absolute">
+	<!-- Logo Nav START -->
+	<nav class="navbar navbar-expand-xl">
+		<div class="container">
+			<!-- Logo START -->
+			<a class="navbar-brand me-5" href="index.html">
+				<img class="light-mode-item navbar-brand-item" src="assets/images/logo.svg" alt="logo">
+				<img class="dark-mode-item navbar-brand-item" src="assets/images/logo-light.svg" alt="logo">
+			</a>
+			<!-- Logo END -->
+
+			<!-- Main navbar START -->
+			<div class="navbar-collapse collapse" id="navbarCollapse">
+				<ul class="navbar-nav navbar-nav-scroll dropdown-hover">
+
+					<!-- Nav item -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle active" href="#" data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Demos</a>
+						<div class="dropdown-menu dropdown-menu-size-lg p-3">
+							<div class="row">
+								<!-- Image and button -->
+								<div class="col-xl-6">
+									<div class="card bg-light overflow-hidden h-100 p-3" style="background:url(assets/images/bg/08.jpg) no-repeat; background-size:cover; background-position:center;">
+										<!-- Bg overlay -->
+										<div class="bg-overlay bg-dark opacity-5"></div>
+										<div class="card-body d-flex justify-content-center text-center flex-column align-items-center position-relative z-index-2 p-0">
+											<h5 class="text-white">Supercharge your site</h5>
+											<a href="#" class="btn btn-sm btn-white mb-0">See how <i class="bi bi-arrow-right"></i></a>
+										</div>
+									</div>
+								</div>
+
+								<!-- Index nav links -->
+								<div class="col-xl-6">
+									<ul class="list-unstyled pt-3">
+										<li> <a class="dropdown-item" href="index.html">Classic Default</a> </li>
+										<li> <a class="dropdown-item" href="index-creative-agency.html">Creative Agency</a> </li>
+										<li> <a class="dropdown-item" href="index-saas.html">SaaS v.1</a> </li>
+										<li> <a class="dropdown-item" href="index-saas-v2.html">SaaS v.2</a> </li>
+										<li> <a class="dropdown-item" href="index-saas-v3.html">SaaS v.3</a> </li>
+										<li> <a class="dropdown-item" href="index-saas-v4.html">SaaS v.4</a> </li>
+										<li> <a class="dropdown-item" href="index-saas-v5.html">SaaS v.5</a> </li>
+										<li> <a class="dropdown-item" href="index-landing-product.html">Product Landing</a> </li>
+										<li> <a class="dropdown-item" href="index-mobile-app-showcase.html">Mobile App Showcase</a> </li>
+										<li> <a class="dropdown-item active" href="index-shop.html">Index Shop</a> </li>
+									</ul>
+								</div>
+
+								<!-- CTA -->
+								<div class="col-12">
+									<hr class="mt-sm-4"> <!-- Divider -->
+									<div class="d-sm-flex justify-content-between align-items-center px-2">
+										<div class="me-3 mb-2 mb-sm-0">
+											<h6 class="mb-2 mb-sm-0">Ready to get started?</h6>
+											<small class="mb-0">Take your documents to the next level with Mizzle</small>
+										</div>
+										<a href="#" class="btn btn-sm btn-primary">Get in touch</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+
+					<!-- Nav item -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">Pages</a>
+						<ul class="dropdown-menu">
+							<!-- Dropdown submenu -->
+							<li class="dropdown dropend">
+								<a class="nav-link dropdown-link dropdown-toggle" data-bs-toggle="dropdown" href="#">About</a>
+								<ul class="dropdown-menu" data-bs-popper="none">
+									<li> <a class="dropdown-item" href="about-v1.html">About v.1</a></li>
+									<li> <a class="dropdown-item" href="about-v2.html">About v.2</a></li>
+									<li> <a class="dropdown-item" href="about-v3.html">About v.3</a></li>
+									<li> <a class="dropdown-item" href="team.html">Team</a></li>
+									<li> <a class="dropdown-item" href="services-v1.html">Services v.1</a></li>
+									<li> <a class="dropdown-item" href="services-v2.html">Services v.2</a></li>
+									<li> <a class="dropdown-item" href="service-single.html">Service Single</a></li>
+									<li> <a class="dropdown-item" href="customer-stories.html">Customer Stories</a></li>
+									<li> <a class="dropdown-item" href="customer-story-single.html">Customer Story Single</a></li>
+									<li> <a class="dropdown-item" href="career.html">Career <span class="badge text-bg-primary ms-2">2 Job</span></a></li>
+									<li> <a class="dropdown-item" href="career-single.html">Career Single</a></li>
+								</ul>
+							</li>
+
+							<li> <a class="dropdown-item" href="contact-v1.html">Contact v.1</a></li>
+							<li> <a class="dropdown-item" href="contact-v2.html">Contact v.2</a></li>
+
+							<!-- Dropdown submenu -->
+							<li class="dropdown dropend">
+								<a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" href="#">SaaS Pages</a>
+								<ul class="dropdown-menu">
+									<li> <a class="dropdown-item" href="features.html">Features</a></li>
+									<li> <a class="dropdown-item" href="feature-single.html">Feature Single</a></li>
+									<li> <a class="dropdown-item" href="integrations.html">Integrations</a></li>
+									<li> <a class="dropdown-item" href="integration-single.html">Integration Single</a></li>
+								</ul>
+							</li>
+
+							<!-- Dropdown submenu -->
+							<li class="dropdown dropend">
+								<a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" href="#">Shop</a>
+								<ul class="dropdown-menu" >
+									<li> <a class="dropdown-item" href="shop-grid.html">Shop Grid</a></li>
+									<li> <a class="dropdown-item" href="shop-single.html">Shop Single</a></li>
+									<li> <a class="dropdown-item" href="shop-cart.html">Shop Cart</a></li>
+									<li> <a class="dropdown-item" href="shop-empty-cart.html">Shop Empty Cart</a></li>
+									<li> <a class="dropdown-item" href="shop-checkout.html">Shop Checkout</a></li>
+								</ul>
+							</li>
+
+							<!-- Dropdown submenu -->
+							<li class="dropdown dropend">
+								<a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" href="#">Blog</a>
+								<ul class="dropdown-menu" >
+									<li> <a class="dropdown-item" href="blog-grid.html">Blog Grid</a></li>
+									<li> <a class="dropdown-item" href="blog-list-sidebar.html">Blog List Sidebar</a></li>
+									<li> <a class="dropdown-item" href="blog-single-v1.html">Blog Single v.1</a></li>
+									<li> <a class="dropdown-item" href="blog-single-v2.html">Blog Single v.2</a></li>
+								</ul>
+							</li>
+
+							<!-- Dropdown submenu -->
+							<li class="dropdown dropend">
+								<a class="nav-link dropdown-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Specialty Pages</a>
+								<ul class="dropdown-menu" data-bs-popper="none">
+									<li> <a class="dropdown-item" href="help-center.html">Help Center</a></li>
+									<li> <a class="dropdown-item" href="help-center-detail.html">Help Center Detail</a></li>
+									<li> <a class="dropdown-item" href="pricing.html">Pricing</a></li>
+									<li> <a class="dropdown-item" href="faq.html">Faqs</a></li>
+									<li> <a class="dropdown-item" href="error-404.html">Error 404</a></li>
+									<li> <a class="dropdown-item" href="coming-soon.html">Coming Soon</a></li>
+									<li> <a class="dropdown-item" href="terms-and-condition.html">Terms & Conditions</a></li>
+								</ul>
+							</li>
+
+							<!-- Dropdown submenu -->
+							<li class="dropdown dropend">
+								<a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" href="#">Authentication</a>
+								<ul class="dropdown-menu" data-bs-popper="none">
+									<li> <a class="dropdown-item" href="sign-up.html">Sign Up</a></li>
+									<li> <a class="dropdown-item" href="sign-in.html">Sign In</a></li>
+									<li> <a class="dropdown-item" href="forgot-password.html">Forgot Password</a></li>
+								</ul>
+							</li>
+
+							<!-- Dropdown submenu -->
+							<li class="dropdown dropend">
+								<a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" href="#">Accounts</a>
+								<ul class="dropdown-menu" data-bs-popper="none">
+									<li> <a class="dropdown-item" href="account-detail.html">Details</a></li>
+									<li> <a class="dropdown-item" href="account-security.html">Security</a></li>
+									<li> <a class="dropdown-item" href="account-notification.html">Notifications</a></li>
+									<li> <a class="dropdown-item" href="account-projects.html">My Projects</a></li>
+									<li> <a class="dropdown-item" href="account-payment-details.html">Payment Details</a></li>
+									<li> <a class="dropdown-item" href="account-order.html">Order History</a></li>
+									<li> <a class="dropdown-item" href="account-wishlist.html">Wishlist</a></li>
+									<li> <a class="dropdown-item" href="account-delete.html">Delete Profile</a></li>
+								</ul>
+							</li>
+
+							<!-- Dropdown divider -->
+							<li> <hr class="dropdown-divider"></li>
+
+							<!-- Dropdown Multilevel -->
+							<li class="dropdown dropend">
+								<a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" href="#">Dropdown levels</a>
+								<ul class="dropdown-menu">
+
+									<!-- dropdown submenu open right -->
+										<li class="dropdown dropend">
+											<a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" href="#">Dropdown (end)</a>
+											<ul class="dropdown-menu">
+												<li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
+												<li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
+											</ul>
+										</li>
+									<li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
+
+									<!-- dropdown submenu open left -->
+									<li class="dropdown dropstart">
+										<a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" href="#">Dropdown (start)</a>
+										<ul class="dropdown-menu">
+											<li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
+											<li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
+										</ul>
+									</li>
+									<li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+
+					<!-- Nav item -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Portfolio</a>
+						<div class="dropdown-menu dropdown-menu-center dropdown-menu-size-lg p-3">
+							<div class="row g-xl-3">
+								<!-- Work -->
+								<div class="col-xl-7 d-none d-xl-block">
+									<div class="d-flex gap-4">
+										<!-- Card -->
+										<div class="card bg-transparent">
+											<!-- Image -->
+											<img src="assets/images/portfolio/list/02.jpg" class="card-img" alt="">
+											<!-- Card body -->
+											<div class="card-body px-0 text-start pb-0">
+												<h6><a href="#">Brushstrokes and Beyond</a></h6>
+												<p class="mb-2 small">We help our customers better manage their web presence.</p>
+												<a class="icon-link icon-link-hover stretched-link mb-0" href="portfolio-case-studies-v2.html">Learn more<i class="bi bi-arrow-right"></i> </a>
+											</div>
+										</div>
+
+										<!-- Divider line -->
+										<div class="vr ms-2"></div>
+									</div>
+								</div>
+
+								<!-- Index nav links -->
+								<div class="col-xl-5">
+									<ul class="list-unstyled">
+										<li class="dropdown-header h6">Portfolio Pages</li>
+										<li> <a class="dropdown-item" href="portfolio-masonry.html">Portfolio Masonry</a> </li>
+										<li> <a class="dropdown-item" href="portfolio-showcase.html">Portfolio Showcase</a> </li>
+										<li> <a class="dropdown-item" href="portfolio-list.html">Portfolio List</a> </li>
+										<li> <a class="dropdown-item" href="portfolio-case-studies-v1.html">Portfolio Case Study v.1</a> </li>
+										<li> <a class="dropdown-item" href="portfolio-case-studies-v2.html">Portfolio Case Study v.2</a> </li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</li>
+
+					<!-- Nav item -->
+					<li class="nav-item"> <a class="nav-link" href="contact-v1.html">Contact us</a> </li>
+				</ul>
+			</div>
+			<!-- Main navbar END -->
+
+			<!-- Buttons -->
+			<ul class="nav align-items-center dropdown-hover ms-sm-2">
+				<!-- Dark mode option START -->
+				<li class="nav-item dropdown dropdown-animation">
+					<button class="btn btn-link mb-0 px-2 lh-1" id="bd-theme"
+					type="button"
+					aria-expanded="false"
+					data-bs-toggle="dropdown"
+					data-bs-display="static">
+					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"  class="bi bi-circle-half theme-icon-active fill-mode fa-fw" viewBox="0 0 16 16">
+						<path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+						<use href="#"></use>
+					</svg>
+					</button>
+
+					<ul class="dropdown-menu min-w-auto dropdown-menu-end" aria-labelledby="bd-theme">
+						<li class="mb-1">
+							<button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light">
+								<svg width="16" height="16" fill="currentColor" class="bi bi-brightness-high-fill fa-fw mode-switch me-1" viewBox="0 0 16 16">
+									<path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+									<use href="#"></use>
+								</svg>Light
+							</button>
+						</li>
+						<li class="mb-1">
+							<button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-stars-fill fa-fw mode-switch me-1" viewBox="0 0 16 16">
+									<path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+									<path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+									<use href="#"></use>
+								</svg>Dark
+							</button>
+						</li>
+						<li>
+							<button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-half fa-fw mode-switch me-1" viewBox="0 0 16 16">
+									<path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+									<use href="#"></use>
+								</svg>Auto
+							</button>
+						</li>
+					</ul>
+				</li>
+				<!-- Dark mode option END -->
+
+				<!-- Search -->
+				<li class="nav-item flex-nowrap align-items-center ms-3 d-none d-md-block">
+					<form class="position-relative">
+						<input class="form-control pe-5 bg-light" type="search" placeholder="Search" aria-label="Search">
+						<button class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset" type="submit">
+							<i class="fas fa-search"></i>
+						</button>
+					</form>
+				</li>
+
+				<!-- Offcanvas cart menu -->
+				<li class="nav-item position-relative ms-2 ms-sm-3">
+					<a class="btn btn-light border btn-round mb-0" data-bs-toggle="offcanvas" href="#offcanvasMenu" role="button" aria-controls="offcanvasMenu">
+							<i class="bi bi-cart3 fa-fw" data-bs-target="#offcanvasMenu"></i>
+					</a>
+					<span class="position-absolute top-0 start-100 translate-middle badge smaller rounded-circle bg-primary mt-xl-2 ms-n1">2
+						<span class="visually-hidden">unread messages</span>
+					</span>
+				</li>
+
+				<!-- Responsive navbar toggler -->
+				<li class="nav-item">
+					<button class="navbar-toggler ms-3 p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-animation">
+							<span></span>
+							<span></span>
+							<span></span>
+						</span>
+					</button>
+				</li>
+			</ul>
+
+		</div>
+	</nav>
+	<!-- Logo Nav END -->
+</header>
+<!-- Header END -->
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+
+<!-- =======================
+Main Banner START -->
+<section class="pt-5 pt-xl-7">
+		<!-- Slider START -->
+		<div class="swiper overflow-hidden pt-5" data-swiper-options='{
+			"autoplay":{
+				"delay": 4000,
+				"disableOnInteraction": false
+			},
+			"pagination":{
+				"el":".swiper-pagination",
+				"clickable":"true"
+			}}'>
+
+			<div class="swiper-wrapper">
+				<!-- Slider item -->
+				<div class="swiper-slide">
+					<div class="card overflow-hidden h-500px h-xl-750px rounded-0" style="background-image:url(assets/images/shop/bg/01.jpg); background-position: center left; background-size: cover;">
+						<!-- Bg overlay -->
+						<div class="bg-overlay bg-dark opacity-5 d-lg-none"></div>
+						<!-- Card image overlay -->
+						<div class="card-img-overlay d-flex align-items-center">
+							<div class="container">
+								<div class="row">
+									<div class="col-sm-11 col-lg-8 col-xl-5">
+										<span class="d-inline-block text-bg-dark small rounded-pill px-3 py-2 mb-4">New release mizz-VR</span>
+										<!-- Title -->
+										<h1 class="text-white display-6 mb-4">Dive into Virtual Reality Adventure</h1>
+
+										<p class="text-white mb-4"> Whether you're a gaming enthusiast or simply seeking an extraordinary escape from reality, our Virtual VR product is your portal to endless excitement. </p>
+										<a class="btn btn-lg btn-outline-white icon-link icon-link-hover mb-0" href="#">Show details<i class="bi bi-arrow-right"></i> </a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Slider item -->
+				<div class="swiper-slide">
+					<div class="card overflow-hidden h-500px h-xl-750px rounded-0" style="background-image:url(assets/images/shop/bg/02.jpg); background-position: center left; background-size: cover;">
+						<!-- Bg overlay -->
+						<div class="bg-overlay bg-dark opacity-5 d-lg-none"></div>
+						<!-- Card image overlay -->
+						<div class="card-img-overlay d-flex align-items-center">
+							<div class="container">
+								<div class="row">
+									<div class="col-md-11 col-lg-8 col-xl-5 ms-auto">
+
+										<p class="fs-4 fw-normal text-white mb-3">Festival Collection <span class="text-bg-dark rounded px-3">2023</span></p>
+										<!-- Title -->
+										<h1 class="text-white display-4 mb-3">FLAT 50% OFF</h1>
+
+										<p class="text-white mb-4"> Step into a world of quality and craftsmanship – it's time to put your best foot forward.</p>
+										<a class="btn btn-lg btn-dark icon-link icon-link-hover mb-0" href="#">Show now<i class="bi bi-arrow-right"></i> </a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Slider Pagination -->
+			<div class="swiper-pagination swiper-pagination-line position-absolute bottom-0 mb-3"></div>
+		</div>
+		<!-- Slider END -->
+</section>
+<!-- =======================
+Main Banner END -->
+
+
+<!-- =======================
+Product grid START -->
+
+<div class="inner-container-small text-center mb-4 mb-sm-5">
+    <h2 class="mb-4">CHEZ NBS C'EST LA SATISFCATION </h2>
+    <p class="mb-0">Consulter nos catalogues que nous commercons dans le monde à travers notre marque.</p>
+</div>
+
+
+<section class="bg-parallax position-relative" style="background:url(assets/images/shop/bg/04.jpg) no-repeat; background-size:cover; background-position:center;">
+	<!-- Bg overlay -->
+	<div class="bg-overlay bg-dark opacity-6"></div>
+
+	<div class="container position-relative z-index-2">
+		<div class="row">
+			<div class="col-lg-8 col-xl-5 mb-5 mb-xl-0">
+				<span class="text-primary display-4">EN STOCK</span>
+				<h3 class="text-white my-4">Liste des produits que nous  commercons</h3>
+				<p class="text-white">Nos Commercons des produits dans le monde à travers nos partenaires .</p>
+
+				<!-- Slider arrow -->
+				<div class="d-flex gap-3 position-relative mt-5 mt-md-6">
+					<a href="#" class="btn btn-outline-white btn-icon rounded-circle mb-0 swiper-button-prev"><i class="bi bi-arrow-left"></i></a>
+					<a href="#" class="btn btn-outline-white btn-icon rounded-circle mb-0 swiper-button-next"><i class="bi bi-arrow-right"></i></a>
+				</div>
+			</div>
+
+			<div class="col-xl-7 col-xxl-6 ms-auto">
+
+				<!-- Slider START -->
+				<div class="swiper" data-swiper-options='{
+					"spaceBetween": 30,
+					"grabCursor": true,
+					"speed":"1000",
+					"navigation":{
+						"nextEl":".swiper-button-next",
+						"prevEl":".swiper-button-prev"
+					},
+					"autoplay":{
+						"delay": 5000,
+						"disableOnInteraction": true,
+						"pauseOnMouseEnter": true
+					},
+					"breakpoints": {
+						"576": {"slidesPerView": 1},
+						"768": {"slidesPerView": 2},
+						"992": {"slidesPerView": 3},
+						"1200": {"slidesPerView": 2}
+					}}'>
+
+					<div class="swiper-wrapper">
+						<!-- Slider items -->
+                        @foreach ($allProjets as $projet)
+						<div class="swiper-slide">
+							<div class="card border overflow-hidden p-0 h-100">
+
+
+								<!-- Image -->
+								<div class="card-header bg-transparent pb-0">
+									<img src="{{asset('projets/images/'.$projet->image)}}" alt="">
+								</div>
+
+								<!-- Card body -->
+								<div class="card-body pt-0">
+									<h6 class="card-title"><a href="#" class="stretched-link">{{$projet->title}}</a></h6>
+									<p class="mb-0">{{$projet->description}} </p>
+								</div>
+
+								<!-- Card footer -->
+								<div class="card-footer bg-transparent d-flex justify-content-between align-items-center pt-0">
+									<div class="d-flex align-items-center gap-2 justify-content-center">
+										<p class="fw-bold text-success mb-0">12300 FCFA</p>
+
+									</div>
+									<a href="#" class="btn btn-dark mb-0 z-index-2">ACHETER</a>
+								</div>
+							</div>
+						</div>
+                        @endforeach
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+ <!-- =======================
+Product grid END -->
+
+<!-- =======================
+Features START -->
+<section class="pt-0 mt-4">
+	<div class="container">
+		<div class="row g-4 g-sm-6">
+			<!-- Item -->
+			<div class="col-sm-6 col-lg-3">
+				<div class="card card-body bg-transparent p-0">
+					<div class="icon-lg rounded-circle bg-info bg-opacity-10 text-info mb-4">
+						<i class="bi bi-lightning-charge-fill fa-lg"></i>
+					</div>
+					<h6 class="mb-3">Fast and reliable delivery</h6>
+					<p class="mb-0">Ensure timely and dependable delivery services to meet customer expectations.</p>
+				</div>
+			</div>
+
+			<!-- Item -->
+			<div class="col-sm-6 col-lg-3">
+				<div class="card card-body bg-transparent p-0">
+					<div class="icon-lg rounded-circle bg-warning bg-opacity-15 text-warning mb-4">
+						<i class="bi bi-radar fa-lg"></i>
+					</div>
+					<h6 class="mb-3">Package tracking</h6>
+					<p class="mb-0">Offer real-time tracking information, so customers can monitor the status of their shipments.</p>
+				</div>
+			</div>
+
+			<!-- Item -->
+			<div class="col-sm-6 col-lg-3">
+				<div class="card card-body bg-transparent p-0">
+					<div class="icon-lg rounded-circle bg-danger bg-opacity-10 text-danger mb-4">
+						<i class="bi bi-fire fa-lg"></i>
+					</div>
+					<h6 class="mb-3">Returns and exchanges</h6>
+					<p class="mb-0">Clearly outline your return and exchange policy, making it easy for customers to initiate returns.</p>
+				</div>
+			</div>
+
+			<!-- Item -->
+			<div class="col-sm-6 col-lg-3">
+				<div class="card card-body bg-transparent p-0">
+					<div class="icon-lg rounded-circle bg-primary bg-opacity-10 text-primary mb-4">
+						<i class="bi bi-headset fa-lg"></i>
+					</div>
+					<h6 class="mb-3">Customer support</h6>
+					<p class="mb-0">Provide responsive customer support to address shipping-related queries and issues.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="bg-dark position-relative overflow-hidden" data-bs-theme="dark">
+	<!-- SVG decoration -->
+	<figure class="position-absolute top-0 end-0 me-n9 mt-n7 d-none d-md-block">
+		<svg class="fill-white" width="768.8px" height="1386px" viewBox="0 0 768.8 1386" style="enable-background:new 0 0 768.8 1386; opacity: 0.07;" xml:space="preserve">
+			<path d="M647.6,748.4c1.9,6,3.3,12.2,3.8,18.4c2.2,18.9-0.7,38.9-9.1,61.5c-15.6,41.9-47.8,85.3-81.6,131.5 c-46.1,63.1-94.5,128.4-108.1,199.1c-15.7,80.6,17.2,154.5,101.1,226.1l-0.4,0.4c-188.1-160.7-84.4-301.8,7.3-426.2 c33.9-46,65.8-89.6,81.4-131.2c17.5-46.8,11.8-84.9-18-119.6c-39.6-46.6-86.5-86.9-135.7-129.3C339.1,450.3,184.9,317.3,240.6,4.6 l0.6,0.1C185.7,317,339.7,450.1,488.7,578.7c49.3,42.7,95.8,82.8,135.8,129.6C635.5,721,643.1,734.2,647.6,748.4z"></path>
+			<path d="M636.2,722.3c23.4,73.7-25.2,149.2-76.5,228.7c-40.8,63.5-83,129.1-91.9,198.3c-9.9,78.2,25.9,150,109.6,219 l-0.4,0.7c-45-37.1-75.4-74-93.5-112.7c-15.9-34.5-21.2-69.5-16.5-106.8c8.9-69.5,51-135.1,91.9-198.6 C616.4,861.3,671,776.5,622,694.1c-39.6-66.6-102.4-118.8-169-174.2c-68.7-57.3-140-116.4-188.1-195.3 c-25.9-42.6-42.9-86.9-51.5-135.2c-9.8-54.6-9.2-112.9,2-177.9l0.6,0.1c-46.5,271.4,97.9,391.7,237.5,507.9 c66.7,55.4,129.4,107.7,169.1,174.5C628.8,702.7,633.1,712.6,636.2,722.3z"></path>
+			<path d="M624.6,687.5c11.7,37,10.5,76.9-3.8,121.9c-13.7,43.3-38.1,87.4-61.8,130.2c-35.7,64.2-72.5,130.4-76.3,198.6 c-4.4,76.5,34.5,146.1,118.7,213.3l-0.6,0.8c-188.5-150.2-114.3-284-42.6-413.2c49.3-88.7,95.7-172.7,62.4-260.6 c-31.5-83-108.5-141.7-189.7-204C363,422.5,293.2,369,244.9,298c-26.1-38.5-43.3-78.4-53-121.8C181.2,127,180.6,75,190.2,16.8l0.9,0 C151,259.3,293.5,368.3,431.2,473.7c81.5,62.2,158.3,121.3,190.1,204.2C622.6,681.2,623.6,684.4,624.6,687.5z"></path>
+			<path d="M614.6,642.5c2.2,6.8,4.1,13.7,5.4,20.8c18.1,91.8-22.3,177.4-61.1,260.2c-32.2,68.8-62.8,133.6-62.1,201.3 c0.8,76.3,41.6,143,128.7,209.2l-0.6,0.8c-46.1-35.1-78.8-70-100.3-106.8c-19.1-32.9-28.6-66.6-28.9-103.1 c-0.6-67.6,29.8-132.7,62.3-201.6c38.8-82.7,79-168.2,60.9-259.8c-19.1-96.7-109.2-158.6-204.5-224.2 c-68.3-47.1-139.2-95.6-188.9-160.4c-56.1-73.2-75.8-157-60.3-255.8l0.9,0c-34.9,220.7,109.1,319.7,248.6,415.2 C503.4,499.3,587.6,557.2,614.6,642.5z"></path>
+			<path d="M610.8,603.9c4.4,13.9,7.1,28.7,7.8,44.6c3.6,91.5-28.4,172.7-59.3,251.2c-28.5,72.3-55.1,140.5-50.2,208.8 c5.2,76.6,49.9,143,140.1,208.8l-0.4,0.7c-90.5-66-135.2-132.4-140.8-209.2c-5-68.6,21.9-136.9,50.3-209.4 c30.9-78.5,62.6-159.6,59.1-250.9c-4.2-109-107.3-171.8-216.8-238.5c-70.1-42.7-142.8-87-194.2-146.1 c-58.1-66.8-79.9-143.6-66-234.6l1,0.3c-30.7,202.9,117.1,292.9,259.8,379.6C494.9,466.2,584.1,520.8,610.8,603.9z"></path>
+			<path d="M610.7,570.7c6.1,19.2,8.4,40.1,6,62.8c-8.3,84.1-33.8,160.3-55.9,227.3c-27.6,83.2-51.4,154.9-42.7,226 c9.5,78.4,58.7,146,155,213l-0.6,0.8c-96.5-66.7-145.8-134.6-155.4-213.2c-8.8-71.4,15.2-143.4,42.8-226.7 c22.3-67.1,47.6-143.3,55.9-227.3c12-120.7-104.2-182.9-227.6-248.9c-72.3-38.6-147.1-78.7-200.6-132.7 c-60.6-61-84.2-131.8-72-216.2l1.2,0.2C89.9,223.5,242,305,389.1,383.7C488.9,437.2,584.6,488.6,610.7,570.7z"></path>
+			<path d="M613,540.8c7.3,23.1,8.5,48.7,1.9,77.9c-14,63.3-31.8,122.1-47.4,173.8c-30,99.3-56,185.2-45,263.4 c11.7,84.3,67.2,156.6,174.2,227.2l-0.5,1c-56.6-37.2-98.1-74.3-126.8-113.1c-26.6-35.7-42.3-73.2-47.9-114.7 c-11.1-78.8,14.9-164.4,45.1-264c15.7-51.7,33.4-110.5,47.5-173.6C643.5,486.7,513.4,426,375.8,361.9 c-74.9-34.9-152.2-71-207.6-120.1c-63-55.7-88.3-121-78-199.6l1.1-0.1c-10.5,78.1,14.8,143.1,77.7,198.6 c55.4,49.1,132.7,85.3,207.5,119.9C484,410.7,587.1,458.9,613,540.8z"></path>
+			<path d="M617.2,512.9c8.3,26.2,8,56.1-3.5,90.9c-5.6,17.1-11.2,33.9-16.5,50c-47.8,143.4-85.7,256.4-76.5,351.9 c9.7,99.7,71.5,180,200.4,260.4l-0.5,1c-67.3-41.9-115.6-83.2-148.1-126.6c-30.9-41-48.1-85.2-52.8-134.8 c-9.3-95.8,28.8-208.9,76.6-352.3c5.6-16.2,10.9-32.9,16.5-50c47.5-143.5-96.3-201.6-248.6-263.1c-77.7-31.1-157.6-63.5-215.4-108.2 C83.3,181.7,56.1,121.4,65.2,48l1.2,0.2c-9,72.7,18.1,132.8,83.1,183c57.8,44.6,137.6,76.8,214.8,108.1 C480.2,386,591.2,431,617.2,512.9z"></path>
+			<path d="M622.4,486.7c9.6,30.2,6.1,63.9-10.3,102.3C465,933,463,1084.4,745.1,1249l-0.8,1.1 c-143.5-83.6-211.5-162.5-227.9-263.5c-17.4-106.8,25.3-236.4,94.5-398.1c18.6-43.4,20.4-80.4,6-113.1 C583.7,401.1,471.1,362,351.5,320.8C189.7,265,22.7,207.3,40,54.3l1.2,0.2C23.8,206.4,190.5,263.8,351.7,319.6 C471.4,361,584.6,400,617.6,475C619.7,478.9,621.2,482.8,622.4,486.7z"></path>
+			<path d="M628.6,461.4c10.3,32.5,4.4,69.6-18,112.8c-93.9,182.2-122.9,308.3-94.5,408.8c26.1,92.5,101.7,167,252.8,249 l-0.8,1.1c-151.5-82.5-227.2-157.2-253.6-249.9c-28.5-100.7,0.5-227.1,94.5-409.9c24.3-47.3,29-87.1,14.3-121.5 c-32.7-76-155.1-112-284.6-149.7C172.6,253.7,0.1,203.5,15.1,60.4l1.2,0.2c-14.6,141.8,157,191.9,323.2,240.6 c129.9,37.9,252.4,73.9,285.3,150.4C626.2,454.9,627.5,458,628.6,461.4z"></path>
+		</svg>
+	</figure>
+
+	<div class="container position-relative">
+		<!-- Title -->
+		<div class="inner-container-small text-center">
+			<span class="bg-light heading-color small rounded-3 px-3 py-2">🚀 Innovative solutions, Measurable results</span>
+			<h2 class="mb-0 mt-4">We specialize in the following services</h2>
+		</div>
+
+		<!-- Service list START -->
+		<div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 gy-5 gy-md-7 mt-3">
+			<!-- Service item -->
+			<div class="col">
+				<div class="card bg-light h-100">
+					<div class="card-body pb-0">
+						<!-- Icon -->
+						<div class="icon-lg bg-white text-primary rounded-circle mb-4 mt-n5">
+							<i class="bi bi-stack fa-fw fs-5"></i>
+						</div>
+						<!-- Content -->
+						<h5 class="mb-3"><a href="#">Digital Marketing</a></h5>
+						<p>Growing brands online through digital channels.</p>
+					</div>
+					<div class="card-footer bg-light mt-auto pt-2">
+						<a class="icon-link icon-link-hover" href="#">Know more<i class="bi bi-arrow-right"></i> </a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Service item -->
+			<div class="col">
+				<div class="card bg-light h-100">
+					<div class="card-body pb-0">
+						<!-- Icon -->
+						<div class="icon-lg bg-white text-primary rounded-circle mb-4 mt-n5">
+							<i class="bi bi-boxes fa-fw fs-5"></i>
+						</div>
+						<!-- Content -->
+						<h5 class="mb-3"><a href="#">Product Design</a></h5>
+						<p>Creating products that users love and businesses need .</p>
+					</div>
+					<div class="card-footer bg-light mt-auto pt-2">
+						<a class="icon-link icon-link-hover" href="#">Know more<i class="bi bi-arrow-right"></i> </a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Service item -->
+			<div class="col">
+				<div class="card bg-light h-100">
+					<div class="card-body pb-0">
+						<!-- Icon -->
+						<div class="icon-lg bg-white text-primary rounded-circle mb-4 mt-n5">
+							<i class="bi bi-circle-square fa-fw fs-5"></i>
+						</div>
+						<!-- Content -->
+						<h5 class="mb-3"><a href="#">Web Design</a></h5>
+						<p>Designing websites that are visually appealing &amp; user-friendly.</p>
+					</div>
+					<div class="card-footer bg-light mt-auto pt-2">
+						<a class="icon-link icon-link-hover" href="#">Know more<i class="bi bi-arrow-right"></i> </a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Service item -->
+			<div class="col">
+				<div class="card bg-light h-100">
+					<div class="card-body pb-0">
+						<!-- Icon -->
+						<div class="icon-lg bg-white text-primary rounded-circle mb-4 mt-n5">
+							<i class="bi bi-vector-pen fa-fw fs-5"></i>
+						</div>
+						<!-- Content -->
+						<h5 class="mb-3"><a href="#">UI/UX Design</a></h5>
+						<p>Creating user interfaces that are both efficient and enjoyable.</p>
+					</div>
+					<div class="card-footer bg-light mt-auto pt-2">
+						<a class="icon-link icon-link-hover" href="#">Know more<i class="bi bi-arrow-right"></i> </a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Service item -->
+			<div class="col">
+				<div class="card bg-light h-100">
+					<div class="card-body pb-0">
+						<!-- Icon -->
+						<div class="icon-lg bg-white text-primary rounded-circle mb-4 mt-n5">
+							<i class="bi bi-briefcase fa-fw fs-5"></i>
+						</div>
+						<!-- Content -->
+						<h5 class="mb-3"><a href="#">Business Strategy</a></h5>
+						<p>Developing and executing plans to achieve business goals.</p>
+					</div>
+					<div class="card-footer bg-light mt-auto pt-2">
+						<a class="icon-link icon-link-hover" href="#">Know more<i class="bi bi-arrow-right"></i> </a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Service item -->
+			<div class="col">
+				<div class="card bg-light h-100">
+					<div class="card-body pb-0">
+						<!-- Icon -->
+						<div class="icon-lg bg-white text-primary rounded-circle mb-4 mt-n5">
+							<i class="bi bi-binoculars fa-fw fs-5"></i>
+						</div>
+						<!-- Content -->
+						<h5 class="mb-3"><a href="#">Research</a></h5>
+						<p>Gathering and analyzing data to inform decision-making.</p>
+					</div>
+					<div class="card-footer bg-light mt-auto pt-2">
+						<a class="icon-link icon-link-hover" href="#">Know more<i class="bi bi-arrow-right"></i> </a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Service item -->
+			<div class="col">
+				<div class="card bg-light h-100">
+					<div class="card-body pb-0">
+						<!-- Icon -->
+						<div class="icon-lg bg-white text-primary rounded-circle mb-4 mt-n5"><i class="bi bi-code-slash fa-fw fs-5"></i></div>
+						<!-- Content -->
+						<h5 class="mb-3"><a href="#">Web Development</a></h5>
+						<p>Building and maintaining websites and web applications.</p>
+					</div>
+					<div class="card-footer bg-light mt-auto pt-2">
+						<a class="icon-link icon-link-hover" href="#">Know more<i class="bi bi-arrow-right"></i> </a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Service item -->
+			<div class="col">
+				<div class="card bg-light h-100">
+					<div class="card-body pb-0">
+						<!-- Icon -->
+						<div class="icon-lg bg-white text-primary rounded-circle mb-4 mt-n5">
+							<i class="bi bi-bullseye fa-fw fs-5"></i>
+						</div>
+						<!-- Content -->
+						<h5 class="mb-3"><a href="#">Brand Design</a></h5>
+						<p>Creating brands that are unique, memorable, and meaningful.</p>
+					</div>
+					<div class="card-footer bg-light mt-auto pt-2">
+						<a class="icon-link icon-link-hover" href="#">Know more<i class="bi bi-arrow-right"></i> </a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Service list END -->
+	</div>
+</section>
+<!-- =======================
+Features END -->
+
+<!-- =======================
+Product START -->
+
+<!-- =======================
+Product END -->
+
+<!-- =======================
+Product box and CTA START -->
+<section>
+	<div class="text-center">
+		<div class="row g-lg-6">
+
+			<div class="col-lg-12 mb-6 mb-lg-0">
+				<!-- Newsletter -->
+				<div class="card card-body bg-dark overflow-hidden p-sm-6 mb-6" data-bs-theme="dark">
+					<!-- SVG decoration -->
+					<figure class="text-primary position-absolute top-0 start-0 mt-n3 ms-n4">
+						<svg width="111" height="71" viewBox="0 0 111 71" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M92.4335 8.12935C92.4029 8.01892 92.3733 7.90798 92.3427 7.79755C90.075 8.424 87.8078 9.04993 85.5395 9.67638C85.5762 9.80665 85.6125 9.93744 85.6482 10.0687C87.9103 9.42244 90.1719 8.77564 92.4335 8.12935M15.3001 60.9486C14.1257 60.2652 12.7044 59.8799 13.0538 58.1808C13.2768 57.1004 13.4645 55.963 13.9574 54.9982C15.4792 52.0166 16.8904 48.9301 18.8086 46.2106C21.3559 42.6001 24.9726 40.2261 29.5203 40.048C33.8593 39.8775 38.2167 40.1039 42.5649 40.2144C48.5375 40.3655 54.5352 40.8866 60.0899 37.8445C63.654 35.8924 66.6809 33.5194 68.5935 29.7735C70.7557 25.5375 73.0407 21.3412 75.6013 17.3367C79.1705 11.7552 84.2074 8.11866 90.9418 7.16806C91.6239 7.07188 92.4901 6.78384 92.9687 7.07646C93.7773 7.57161 94.4518 8.39448 94.9538 9.21888C95.1293 9.50641 94.7742 10.4463 94.4079 10.6631C93.6243 11.1277 92.6524 11.2626 91.8014 11.6326C91.1259 11.9257 90.5147 12.3669 89.877 12.7455C89.7592 12.8152 89.6398 12.9755 89.5357 12.9643C87.2639 12.7104 86.2364 14.6976 84.6605 15.6747C81.0188 17.9336 78.8394 21.4399 76.8645 25.0851C74.9993 28.5277 73.2244 32.0192 71.3235 35.4415C70.7817 36.4175 70.0588 37.3656 69.2134 38.0893C66.7595 40.192 64.2479 42.0591 61.1179 43.3451C55.0484 45.8386 48.9523 45.1313 42.7613 44.7669C38.9274 44.541 35.047 44.3303 31.237 44.6702C26.401 45.1013 23.0507 48.1505 20.3718 52.0247C19.6667 53.044 18.5959 53.8104 17.8827 54.8251C17.4102 55.4979 17.3128 56.4225 16.9817 57.2067C16.4649 58.4342 15.893 59.6382 15.3001 60.9486" fill="currentColor"></path>
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M14.2538 29.9021C14.3216 30.0239 14.3899 30.1462 14.4571 30.268C15.6065 29.6346 16.7563 29.0011 17.9061 28.3677C17.8297 28.2296 17.7532 28.0915 17.6768 27.9534C16.5361 28.6031 15.3944 29.2524 14.2538 29.9021M47.9832 29.8797C48.0133 29.9918 48.0434 30.104 48.0734 30.2161C49.474 29.8369 50.8741 29.4583 52.2747 29.0791C52.2446 28.9685 52.2151 28.8585 52.1855 28.7479C50.7849 29.1255 49.3843 29.5026 47.9832 29.8797M78.1082 0.896364C77.8503 1.11448 77.5924 1.3331 77.1938 1.67047H78.4716C79.3809 3.33742 78.806 4.55693 77.5613 5.62916C76.4767 6.56329 75.4727 7.62736 73.8672 7.57691C73.7015 7.57182 73.4253 7.63959 73.3794 7.74916C72.7693 9.19953 71.7005 9.13888 70.5461 8.61755C70.4794 9.30502 70.567 10.0047 70.3163 10.549C70.0466 11.135 69.4773 11.5927 69.0089 12.0773C66.299 14.8792 65.2419 18.5041 63.8831 22.0164C62.6334 25.2458 60.8913 28.2352 57.7925 30.1248C57.3873 30.3715 56.8608 30.4199 56.0912 30.6492C55.5917 31.4651 54.8552 32.4747 53.2701 32.624C52.3481 32.7111 51.499 33.5168 50.5734 33.6264C48.025 33.9276 45.4246 34.3501 42.8992 34.1223C40.5572 33.9108 38.226 33.0811 35.9956 32.2423C31.1445 30.4184 26.1848 30.1396 21.2114 31.2292C18.4494 31.8346 15.8888 33.1515 14.0091 35.4768C13.4403 36.1806 12.6636 36.7121 12.0117 37.3527C8.83693 40.4716 6.33646 44.0577 4.58266 48.1545C4.04189 49.4189 3.5266 50.6945 2.98788 51.9603C2.73355 52.5556 2.44456 52.8511 1.73509 52.3731C-0.0110662 51.1964 -0.275079 50.4269 0.224405 48.2605C2.22897 39.5619 7.51075 33.2325 14.6865 28.3137C17.8659 26.134 21.5952 25.6897 25.3133 25.7931C27.8214 25.8634 30.3433 26.341 32.805 26.8817C35.1006 27.3857 37.3126 28.2561 39.5822 28.8895C42.3406 29.6591 45.0939 29.1474 47.8303 28.6847C54.7329 27.5171 59.004 23.4193 61.1095 16.8331C63.4438 9.52976 68.1343 4.24607 75.0894 1.02173C75.9513 0.6227 76.9772 0.579383 77.9273 0.37146C77.9879 0.546258 78.0481 0.721056 78.1082 0.896364" fill="currentColor"></path>
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M90.5433 31.653C90.0089 32.2353 89.4658 32.81 88.9435 33.4024C88.7191 33.6568 88.3095 34.1157 88.3694 34.1961C89.1835 35.2898 88.3278 36.2024 87.7359 36.6203C86.2178 37.6933 86.7147 39.2165 86.5046 40.5702C86.3792 41.3751 85.3706 42.6368 84.6306 42.7754C84.5702 42.4081 84.5113 42.0494 84.4529 41.6908C84.1281 41.8496 83.7459 41.9467 83.4911 42.181C83.0525 42.5846 82.6927 43.0738 82.1826 43.6617C82.714 43.7654 83.0769 43.8362 83.4586 43.9101C83.5322 44.3719 83.6033 44.8166 83.6738 45.2562C82.2856 45.7677 80.8872 46.0135 79.8238 47.2018C79.2457 47.8484 78.4453 48.1509 78.9026 49.2183C78.9417 49.3088 78.3889 49.8193 78.2991 49.7727C76.1353 48.6517 74.9592 50.6489 74.3009 51.6946C73.7578 52.5561 73.1244 53.018 72.4249 53.3468C71.8884 53.5987 71.0758 53.2552 70.3834 53.1986C70.2109 53.1844 70.0317 53.2547 69.7647 53.3018C69.7962 53.713 69.8246 54.0854 69.8515 54.4486C68.612 54.9742 68.612 54.9742 65.7985 54.1957C65.5488 55.7457 64.287 56.2678 62.6536 55.4244C62.5612 55.733 62.4739 56.0264 62.4617 56.0669C60.773 56.03 59.0072 54.3363 57.554 56.8182C56.2754 55.4118 54.9491 56.0153 53.4984 56.7514C52.8183 57.0959 51.8986 57.0423 51.0869 57.0478C47.7725 57.0701 44.5133 57.2906 41.2892 58.2498C39.7096 58.7198 38.3712 59.6769 36.8814 60.1114C33.6639 61.0504 32.1879 63.896 29.9322 65.8573C28.8739 66.7775 28.3349 68.284 27.5354 69.5087C27.0476 70.2554 26.838 71.4341 25.4224 70.7355C24.3265 70.1952 23.9134 69.5037 24.4209 68.1767C26.7796 62.0126 30.5941 57.2239 36.8809 54.528C41.6146 52.4994 46.5467 52.4731 51.5194 52.3386C54.7334 52.2516 57.9428 52.0254 61.1562 51.8818C61.6531 51.86 62.5003 51.4098 62.2749 52.5839L62.2805 52.5612L61.6592 52.7964C61.6542 52.8687 61.6496 52.9411 61.6445 53.0134C61.9557 53.0417 62.2739 53.1237 62.5754 53.0842C62.9302 53.0382 63.2743 52.7837 63.617 52.7964C66.3843 52.8971 68.7161 51.561 71.0321 50.398C73.4929 49.1621 75.7881 47.5873 78.1042 46.0823C78.8097 45.6245 79.3467 44.9087 79.9609 44.3107L79.9203 44.3446C80.3746 43.9854 80.8278 43.6258 81.5684 43.0394C80.7319 42.9873 80.3071 42.961 79.635 42.9195C80.5446 41.8147 81.3024 40.765 82.1998 39.8509C82.7942 39.2448 83.2043 39.5094 83.6276 40.5859C84.3052 40.5389 84.958 40.4938 85.7402 40.4392C85.3645 39.9338 85.0478 39.5069 84.824 39.2069C84.2301 39.1583 83.4941 39.2721 83.3733 39.0511C83.1505 38.6443 83.2048 38.0251 83.2972 37.5223C83.4276 36.813 83.6469 36.1073 83.9281 35.4421C84.0971 35.0424 84.4555 34.7227 84.8641 34.191C84.5976 33.0938 85.0595 31.9642 87.0147 29.4575C87.2817 29.5895 87.5634 29.7282 87.9116 29.9002C87.737 28.2029 87.9105 27.9297 88.745 27.999V29.7378L88.7166 29.6988C89.0089 30.2958 89.3008 30.8922 89.6262 31.5584C89.7038 31.5372 89.9921 31.4573 90.2809 31.3768C90.3682 31.4689 90.456 31.561 90.5433 31.653" fill="currentColor"></path>
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M91.05 30.6099C90.964 30.5189 90.8775 30.4279 90.7915 30.3369C90.9735 28.4059 90.893 28.3199 89.2505 28.6784L89.2785 28.7169C89.874 28.1504 90.4695 27.5834 91.1385 26.9459C90.717 26.6759 90.314 26.4179 89.698 26.0234C90.224 25.7174 90.6 25.4874 90.9885 25.2804C91.117 25.2119 91.3395 25.2544 91.4145 25.1614C94.349 21.5449 98.2415 19.3599 102.545 17.8789C104.536 17.1939 106.637 16.8294 108.692 16.3369C108.986 16.2664 109.304 16.2954 109.61 16.2784L109.739 16.7114C107.162 17.4684 104.584 18.2254 102.007 18.9824C102.04 19.1079 102.073 19.2334 102.106 19.3594C104.782 18.6204 107.457 17.8809 110.107 17.1489C111.038 19.2034 110.894 19.4559 108.979 20.2784C106.467 21.3584 103.996 22.5329 101.497 23.6449C101 23.8659 100.529 24.2159 99.9335 23.6049C99.691 23.3574 98.983 23.5644 98.3565 23.5644V22.6369C97.762 23.0134 97.2515 23.3364 96.4335 23.8544C97.1575 23.9409 97.5115 23.9829 97.852 24.0239C97.852 24.1599 97.8865 24.2669 97.8475 24.3164C97.4145 24.8639 96.7665 25.1309 96.822 26.1504C96.86 26.8489 95.937 26.8254 95.5255 26.1679C95.154 26.5799 94.7805 26.9944 94.222 27.6134C94.3215 28.8909 93.3995 29.6384 91.681 29.1314C91.745 29.5474 91.8975 29.9319 91.815 30.2559C91.7715 30.4279 91.3185 30.4954 91.05 30.6099" fill="currentColor"></path>
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M74 47.3765C72.0934 48.234 70.1858 49.0911 68.2787 49.9486C68.1856 49.82 68.0931 49.6914 68 49.5629C68.2614 49.3936 68.5055 49.1993 68.7858 49.0587C70.1138 48.3931 71.4413 47.7261 72.7943 47.0989C73.0854 46.9643 73.4799 46.9944 73.8274 46.9486C73.8847 47.0911 73.9426 47.234 74 47.3765" fill="currentColor"></path>
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M62 51.9486C62.9157 50.1567 64.5931 50.4906 66 49.9486C65.9333 50.9163 64.7375 51.4739 62.0101 51.9147C62.0058 51.9236 62 51.9486 62 51.9486" fill="currentColor"></path>
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M80 43.8445C79.4723 43.9225 78.9099 43.9279 78.4273 44.0993C77.9537 44.2675 77.5613 44.6045 77 44.9486C77.1311 43.9131 78.3455 42.8058 79.1308 42.9637C79.4702 43.0315 79.6842 43.5573 79.9565 43.875C79.958 43.8745 80 43.8445 80 43.8445" fill="currentColor"></path>
+						</svg>
+					</figure>
+					<!-- Title and content -->
+					<h4 class="mb-3 position-relative">Subscribe to our email and get 20% off</h4>
+					<p class="mb-4">Elevate Your Look with Our Latest Trendsetting Collections.</p>
+					<!-- Input -->
+					<form class="input-group mb-2">
+						<input class="form-control form-control-lg rounded border bg-light me-3" type="email" placeholder="Enter your email">
+						<button type="button" class="btn btn-primary rounded-2 mb-0"><i class="bi bi-send-fill"></i></button>
+					</form>
+				</div>
+
+				<!-- Product -->
+
+			</div>
+
+
+
+		</div>
+	</div>
+</section>
+
+
+
+<!-- =======================
+Product box and CTA END -->
+
+<!-- =======================
+Brands START -->
+<section class="pt-0">
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-lg-5 col-xl-4 mb-5 mb-lg-0">
+				<h2 class="mb-4">NOS PARTENAIRES NOUS FONT CONFIANCE A TRAVERS LE MONDE</h2>
+
+			</div>
+
+			<div class="col-lg-7 text-center ms-auto">
+				<div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-4 g-md-6">
+					<!-- Image -->
+					<div class="col">
+						<a href="#"><img src="assets/images/client/01.svg" class="grayscale" alt="client-img"></a>
+					</div>
+					<!-- Image -->
+					<div class="col">
+						<a href="#"><img src="assets/images/client/02.svg" class="grayscale" alt="client-img"></a>
+					</div>
+					<!-- Image -->
+					<div class="col">
+						<a href="#"><img src="assets/images/client/03.svg" class="grayscale" alt="client-img"></a>
+					</div>
+					<!-- Image -->
+					<div class="col">
+						<a href="#"><img src="assets/images/client/04.svg" class="grayscale" alt="client-img"></a>
+					</div>
+					<!-- Image -->
+					<div class="col">
+						<a href="#"><img src="assets/images/client/05.svg" class="grayscale" alt="client-img"></a>
+					</div>
+					<!-- Image -->
+					<div class="col">
+						<a href="#"><img src="assets/images/client/06.svg" class="grayscale" alt="client-img"></a>
+					</div>
+					<!-- Image -->
+					<div class="col">
+						<a href="#"><img src="assets/images/client/07.svg" class="grayscale" alt="client-img"></a>
+					</div>
+					<!-- Image -->
+					<div class="col">
+						<a href="#"><img src="assets/images/client/08.svg" class="grayscale" alt="client-img"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+Brands END -->
+
+
+
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+<!-- =======================
+Footer START -->
+<footer>
+	<div class="container">
+		<div class="bg-dark rounded position-relative p-4 p-sm-6 mb-3 mb-sm-5" data-bs-theme="dark">
+			<div class="row mx-auto">
+				<div class="col-lg-8 mx-auto text-center px-0">
+					<!-- Logo -->
+					<a class="me-0" href="index.html">
+						<img class="light-mode-item h-60px" src="assets/images/logo.svg" alt="logo">
+						<img class="dark-mode-item h-60px" src="assets/images/logo-light.svg" alt="logo">
+					</a>
+					<p class="mt-4">A Bootstrap theme that's both stylish and functional, perfect for any type of technology or corporate website.</p>
+					<!-- Links -->
+					<ul class="nav justify-content-center mt-4 mt-md-0">
+						<li class="nav-item"><a class="nav-link px-3 pb-0" href="#">About us</a></li>
+						<li class="nav-item"><a class="nav-link px-3 pb-0" href="#">Contact us</a></li>
+						<li class="nav-item"><a class="nav-link px-3 pb-0" href="#">Career</a></li>
+						<li class="nav-item"><a class="nav-link px-3 pb-0" href="#">Career detail</a></li>
+						<li class="nav-item"><a class="nav-link px-3 pb-0" href="#">Become a partner</a></li>
+						<li class="nav-item"><a class="nav-link px-3 pb-0" href="#">Sign up</a></li>
+						<li class="nav-item"><a class="nav-link px-3 pb-0" href="#">Cookie</a></li>
+					</ul>
+					<!-- Social media button -->
+					<ul class="list-inline mb-0 mt-4">
+						<li class="list-inline-item"> <a class="btn btn-xs btn-icon bg-facebook" href="#"><i class="fab fa-fw fa-facebook-f lh-base"></i></a> </li>
+						<li class="list-inline-item"> <a class="btn btn-xs btn-icon bg-instagram" href="#"><i class="fab fa-fw fa-instagram lh-base"></i></a> </li>
+						<li class="list-inline-item"> <a class="btn btn-xs btn-icon bg-twitter" href="#"><i class="fab fa-fw fa-twitter lh-base"></i></a> </li>
+						<li class="list-inline-item"> <a class="btn btn-xs btn-icon bg-linkedin" href="#"><i class="fab fa-fw fa-linkedin-in lh-base"></i></a> </li>
+						<li class="list-inline-item"> <a class="btn btn-xs btn-icon bg-youtube" href="#"><i class="fab fa-fw fa-youtube lh-base"></i></a> </li>
+					</ul>
+					<!-- copyright text -->
+					<div class="text-body mt-4"> Copyrights ©2024 Mizzle. Build by <a href="https://www.webestica.com/" class="text-body text-primary-hover">Webestica</a>. </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- =======================
+Footer END -->
+
+<!-- Offcanvas START -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMenu">
+	<!-- Offcanvas header -->
+	<div class="offcanvas-header justify-content-between border-bottom px-3">
+		<h5 class="mb-0">Your Cart</h5>
+		<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+	</div>
+
+	<!-- Offcanvas body -->
+	<div class="offcanvas-body d-flex flex-column px-3">
+		<div class="row g-3">
+			<!-- Image -->
+			<div class="col-4">
+				<img class="rounded-2 bg-light p-2" src="assets/images/shop/02.png" alt="avatar">
+			</div>
+			<div class="col-8">
+				<p class="heading-color fw-semibold mb-1">Round neck cotton t-shirt</p>
+				<div class="d-flex justify-content-between align-items-center">
+					<!-- Select item -->
+					<select class="form-select form-select-sm w-auto" aria-label="Default select example">
+						<option value="1">01</option>
+						<option value="2">02</option>
+						<option value="3">03</option>
+					</select>
+
+					<a href="#" class="btn btn-sm btn-link p-0">Remove</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- Button and price -->
+		<div class="mt-auto">
+			<div class="d-flex justify-content-between mb-2">
+				<span class="heading-color fw-semibold">Subtotal</span>
+				<h6 class="text-success mb-0">$103</h6>
+			</div>
+			<!-- Button -->
+			<div class="d-grid">
+				<a href="checkout.html" class="btn btn-lg btn-dark mb-0">Continue to Checkout</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Offcanvas END -->
+
+<!-- Back to top -->
+<div class="back-top"></div>
+
+<!-- Bootstrap JS -->
+<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+<!--Vendors-->
+<script src="assets/vendor/purecounterjs/dist/purecounter_vanilla.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/jarallax/jarallax.min.js"></script>
+<script src="assets/vendor/jarallax/jarallax-video.min.js"></script>
+<script src="assets/vendor/sticky-js/sticky.min.js"></script>
+
+<!-- Theme Functions -->
+<script src="assets/js/functions.js"></script>
+
+</body>
+</html>

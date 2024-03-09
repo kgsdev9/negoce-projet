@@ -73,7 +73,13 @@
                 </td>
                   <td>
                   <a href="{{ route('actualite.edit', $value->id)}}" class="btn btn-primary"> Editer</a>
-                  <a href="{{ route('actualite.destroy', $value->id)}}" class="btn btn-danger"> Supprimer</a>
+
+                  <form action="{{ route('actualite.destroy', $value->id)}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-danger" type="submit">Supprimer</button>
+                </form>
+                 
 
                   </td>
                 </tr>

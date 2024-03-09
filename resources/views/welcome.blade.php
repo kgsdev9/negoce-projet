@@ -1,522 +1,491 @@
-@extends('layout.app')
+
+@extends('layouts.app')
+
 @section('content')
 <main>
-    <!--hero start-->
-    <section class="jarallax py-9 hero-agency" data-jarallax data-speed="0.4">
-       <img class="jarallax-img" src="assets/images/landings/agency/agency-hero-img.jpg" alt="agency" />
-       <div class="position-absolute start-0 end-0">
-          <div class="container">
-             <div class="row">
-                <div class="col-xl-5 col-lg-7 col-12" data-cue="zoomIn">
-                   <div class="text-center text-lg-start">
-                      <div class="mb-4 text-white-stable">
-                         <small class="text-uppercase ls-lg">Bienvenue sur Negoce Bussness Group</small>
-                         <h1 class="mb-3 mt-3 display-3 text-white-stable">La créativité est notre maruqe de fabrice.</h1>
-                         <p class="lead mb-0">Démarrer votre projet de vie avec nous , nous vous garantissons le meilleure des prestations.</p>
-                      </div>
+<section class="pt-5 pt-xl-7">
+    <div class="container pt-2 pt-sm-5 mt-6">
+		<div class="row g-4 g-xxl-5">
+			<div class="col-xl-6">
+				<h1 class="mb-0 lh-base">NBSC à Votre Service d'exportation réussie
+				</h1>
+				<p class="mb-0 mt-4 mt-xl-5">NBSC est une structure dans l’exploitation, l’intermédiation des matières premières et une agence digitale et de communication intégrée qui par ses ambitions et visions se projettent à être leader et référent    dans ses secteurs de prédilection et de son champ de mission par un engagement indescriptible à l’égard de ses partenaires, fournisseurs et bailleurs qui font de NBSC est une réalité à être un maillon important dans la chaine d’exploitation et fort potentiels économiques..</p>
+				<!-- Buttons -->
+				<div class="d-flex gap-1 gap-sm-3 flex-wrap mt-4 mt-xl-5">
+					<a class="btn btn-dark" href="https://wa.me/+2250767647792?text=I'Merci%20D'avoir contactez le service %20Commercial%20de%NBSC">Commencer</a>
+					<a class="btn btn-outline-dark" href="/contact">Nous Contacter</a>
+				</div>
+			</div>
+			<div class="col-xl-6 text-center">
+				<img src="assets/images/elements/hero-finance.svg" alt="hero-img">
+			</div>
+		</div>
+	</div>
+</section>
 
-                      <a href="#section" id="#section" class="btn btn-primary">Commencer maintenant</a>
-                   </div>
-                </div>
-             </div>
-          </div>
-       </div>
-    </section>
-    <!--hero end-->
+<section class="pt-0">
+	<div class="container text-center">
+		<!-- Client-Slider START -->
+		<p class="heading-color fw-semibold mb-4">Nos partenaires De Transit</p>
 
-    <!--Project we done start-->
-    <section class="my-xl-9 my-5">
-       <div class="container">
-          <div class="row">
-             <div class="col-lg-6 offset-lg-3">
-                <div class="text-center mb-xl-7 mb-5" data-cue="fadeIn">
-                   <small class="text-uppercase ls-md fw-semibold">Nos Projets</small>
+		<div class="swiper swiper-initialized swiper-horizontal swiper-backface-hidden" data-swiper-options="{
+			&quot;loop&quot;: false,
+			&quot;slidesPerView&quot;: 2,
+			&quot;spaceBetween&quot;: 30,
+			&quot;breakpoints&quot;: {
+				&quot;576&quot;: {&quot;slidesPerView&quot;: 2},
+				&quot;768&quot;: {&quot;slidesPerView&quot;: 3},
+				&quot;992&quot;: {&quot;slidesPerView&quot;: 4},
+				&quot;1200&quot;: {&quot;slidesPerView&quot;: 6}
+			}}">
 
-                   <h2 class="my-3">Projets phares</h2>
-                   <p class="mb-0">Nous avons conceptualisés des  projets innovants pour nos clients.</p>
-                </div>
-             </div>
-          </div>
-          <div class="table-responsive-lg">
-             <div class="row flex-nowrap pb-4 pb-lg-0 me-5 me-lg-0">
-                @foreach ($allProjets as $projet)
-                <div class="col-lg-4 col-md-6 col-12">
-                   <div data-cue="zoomIn">
-                      <figure class="lift position-relative btn-arrow mb-4">
-                         <a href="#">
-                            <img src="{{asset('projets/images/'.$projet->image)}}" alt="portfolio-2" class="img-fluid rounded-3" />
-                            <div class="icon-shape icon-lg bg-white rounded-circle icon-arrow shadow-lg">
-                               <i class="bi bi-arrow-up-right"></i>
-                            </div>
-                         </a>
-                      </figure>
+			<!-- Slider items -->
+			<div class="swiper-wrapper align-items-center" id="swiper-wrapper-f630309976f13405" aria-live="off" style="transition-duration: 0ms; transform: translate3d(-240.667px, 0px, 0px);">
+				<!-- Image -->
+				<div class="swiper-slide swiper-slide-prev" role="group" aria-label="1 / 8" style="width: 210.667px; margin-right: 30px;">
+					<img src="{{asset('ministere-agriculture.jpeg')}}" class="grayscale px-sm-4 ps-0" alt="client-img">
+				</div>
+				<!-- Image -->
+				<div class="swiper-slide swiper-slide-active" role="group" aria-label="2 / 8" style="width: 210.667px; margin-right: 30px;">
+					<img src="{{asset('conseil-cafe-cacao.jpg')}}" class="grayscale px-sm-4 ps-0" alt="client-img">
+				</div>
+				<!-- Image -->
+				<div class="swiper-slide swiper-slide-next" role="group" aria-label="3 / 8" style="width: 210.667px; margin-right: 30px;">
+					<img src="{{asset('cargillwebsite.jpg')}}" class="grayscale px-sm-4 ps-0" alt="client-img">
+				</div>
+				<!-- Image -->
+				<div class="swiper-slide" role="group" aria-label="4 / 8" style="width: 210.667px; margin-right: 30px;">
+					<img src="{{asset('Bollore_transport_logistics_RVB_02.png')}}" class="grayscale px-sm-4 ps-0" alt="client-img">
+				</div>
+				<!-- Image -->
+				<div class="swiper-slide" role="group" aria-label="5 / 8" style="width: 210.667px; margin-right: 30px;">
+					<img src="{{asset('portabidjan.png')}}" class="grayscale px-sm-4" alt="client-img">
+				</div>
+				<!-- Image -->
+				<div class="swiper-slide" role="group" aria-label="6 / 8" style="width: 210.667px; margin-right: 30px;">
+					<img src="{{asset('air-ci.png')}}" class="grayscale px-sm-4" alt="client-img">
+				</div>
+				<!-- Image -->
+				<div class="swiper-slide" role="group" aria-label="7 / 8" style="width: 210.667px; margin-right: 30px;">
+					<img src="{{asset('port-sanpedro.png')}}" class="grayscale px-sm-4" alt="client-img">
+				</div>
+				<!-- Image -->
 
-                      <h2 class="lh-base h4">
-                         <a href="#" class="text-reset">{{$projet->title}}</a>
-                      </h2>
+			</div>
+		<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+		<!-- Client-Slider END -->
+	</div>
+</section>
+<div class="inner-container-small text-center mb-4 mb-sm-5">
+    <h2 class="mb-4">NOS COLLECTIONS </h2>
+    <p class="mb-0">Consulter nos catalogues que nous commercons dans le monde à travers notre marque.</p>
+</div>
 
-                   </div>
-                </div>
-                @endforeach
+<section class="bg-parallax position-relative" style="background:url(assets/images/shop/transport.jpeg) no-repeat; background-size:cover; background-position:center;" id="nosproduits">
+	<!-- Bg overlay -->
+	<div class="bg-overlay bg-dark opacity-6"></div>
 
-             </div>
-          </div>
-          <div class="row">
-             <div class="col-lg-12" data-cue="fadeIn">
-                <div class="text-center my-5">
-                   <a href="{{route('projet.index')}}" class="btn btn-primary">Consulter plus de projets</a>
-                </div>
-             </div>
-          </div>
-       </div>
-    </section>
-    <!--Project we done end-->
+	<div class="container position-relative z-index-2">
+		<div class="row">
+			<div class="col-lg-8 col-xl-5 mb-5 mb-xl-0">
+				<span class="text-primary display-4">EN STOCK</span>
+				<h3 class="text-white my-4">Liste des produits de commercialisation </h3>
+				<p class="text-white">Nos Commercons des produits dans le monde à travers nos partenaires .</p>
 
-    <!--Our solutions start-->
-    <section class="py-xl-9 py-5 bg-light">
-       <div class="container">
-          <div class="row">
-             <div class="col-xl-5 col-md-7" data-cue="fadeIn">
-                <div class="mb-xl-7 mb-5">
-                   <small class="text-uppercase ls-md fw-semibold">Nos Prestations</small>
-                   <h2 class="h1 mb-3 mt-4">Créer un site internet performant</h2>
-                   <p class="mb-0 text-body">Vos projets sont confiés a des experts qui se chargeront de développer vos solutions informatiques de qualité .</p>
-                </div>
-             </div>
-          </div>
-          <div class="row g-4" data-cue="fadeIn">
-             <div class="col-lg-6 col-md-6 col-12">
-                <div class="card card-lift h-100" data-cue="zoomIn" data-duration="500">
-                   <div class="card-body p-5">
-                      <div class="d-lg-flex">
-                         <div class="p-3 icon-xl icon-shape rounded bg-primary bg-opacity-10 border border-primary-subtle">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="currentColor" class="bi bi-vector-pen text-primary" viewBox="0 0 16 16">
-                               <path
-                                  fill-rule="evenodd"
-                                  d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z" />
-                               <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z" />
-                            </svg>
-                         </div>
-                         <div class="ms-lg-5 mt-4 mt-lg-0">
-                            <div class="mb-4">
-                               <h3>UX/UI Design</h3>
-                               <p class="mb-0">Nous concevons les maquettes de vos applications mobile et web pour vous fournir une prestation unique.</p>
-                            </div>
+				<!-- Slider arrow -->
+				<div class="d-flex gap-3 position-relative mt-5 mt-md-6">
+					<a href="#" class="btn btn-outline-white btn-icon rounded-circle mb-0 swiper-button-prev"><i class="bi bi-arrow-left"></i></a>
+					<a href="#" class="btn btn-outline-white btn-icon rounded-circle mb-0 swiper-button-next"><i class="bi bi-arrow-right"></i></a>
+				</div>
+			</div>
 
+			<div class="col-xl-7 col-xxl-6 ms-auto">
 
-                         </div>
-                      </div>
-                   </div>
-                </div>
-             </div>
-             <div class="col-lg-6 col-md-6 col-12">
-                <div class="card card-lift h-100" data-cue="zoomIn" data-duration="800">
-                   <div class="card-body p-5">
-                      <div class="d-lg-flex">
-                         <div class="p-3 icon-xl icon-shape rounded bg-success bg-opacity-10 border border-success-subtle">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-braces-asterisk text-success" viewBox="0 0 16 16">
-                               <path
-                                  fill-rule="evenodd"
-                                  d="M1.114 8.063V7.9c1.005-.102 1.497-.615 1.497-1.6V4.503c0-1.094.39-1.538 1.354-1.538h.273V2h-.376C2.25 2 1.49 2.759 1.49 4.352v1.524c0 1.094-.376 1.456-1.49 1.456v1.299c1.114 0 1.49.362 1.49 1.456v1.524c0 1.593.759 2.352 2.372 2.352h.376v-.964h-.273c-.964 0-1.354-.444-1.354-1.538V9.663c0-.984-.492-1.497-1.497-1.6ZM14.886 7.9v.164c-1.005.103-1.497.616-1.497 1.6v1.798c0 1.094-.39 1.538-1.354 1.538h-.273v.964h.376c1.613 0 2.372-.759 2.372-2.352v-1.524c0-1.094.376-1.456 1.49-1.456v-1.3c-1.114 0-1.49-.362-1.49-1.456V4.352C14.51 2.759 13.75 2 12.138 2h-.376v.964h.273c.964 0 1.354.444 1.354 1.538V6.3c0 .984.492 1.497 1.497 1.6ZM7.5 11.5V9.207l-1.621 1.621-.707-.707L6.792 8.5H4.5v-1h2.293L5.172 5.879l.707-.707L7.5 6.792V4.5h1v2.293l1.621-1.621.707.707L9.208 7.5H11.5v1H9.207l1.621 1.621-.707.707L8.5 9.208V11.5h-1Z" />
-                            </svg>
-                         </div>
-                         <div class="ms-lg-5 mt-4 mt-lg-0">
-                            <div class="mb-4">
-                               <h3>Web Developement</h3>
-                               <p class="mb-0">Nous concevons et créer vos applications web surmesure en rapport à vos projets de vie.</p>
-                            </div>
-                         </div>
-                      </div>
-                   </div>
-                </div>
-             </div>
-             <div class="col-lg-6 col-md-6 col-12">
-                <div class="card card-lift h-100" data-cue="zoomIn" data-duration="800">
-                   <div class="card-body p-5">
-                      <div class="d-lg-flex">
-                         <div class="p-3 icon-xl icon-shape rounded bg-warning bg-opacity-10 border border-warning-subtle">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-palette2 text-warning" viewBox="0 0 16 16">
-                               <path
-                                  d="M0 .5A.5.5 0 0 1 .5 0h5a.5.5 0 0 1 .5.5v5.277l4.147-4.131a.5.5 0 0 1 .707 0l3.535 3.536a.5.5 0 0 1 0 .708L10.261 10H15.5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-.5.5H3a2.99 2.99 0 0 1-2.121-.879A2.99 2.99 0 0 1 0 13.044m6-.21 7.328-7.3-2.829-2.828L6 7.188v5.647zM4.5 13a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0zM15 15v-4H9.258l-4.015 4H15zM0 .5v12.495V.5z" />
-                               <path d="M0 12.995V13a3.07 3.07 0 0 0 0-.005z" />
-                            </svg>
-                         </div>
-                         <div class="ms-lg-5 mt-4 mt-lg-0">
-                            <div class="mb-4">
-                               <h3>Application mobile</h3>
-                               <p class="mb-0">Nous concevons des solutions mobiles de qualité de tracking , de vente et de solution informatique.</p>
-                            </div>
-                         </div>
-                      </div>
-                   </div>
-                </div>
-             </div>
-             <div class="col-lg-6 col-md-6 col-12">
-                <div class="card card-lift h-100" data-cue="zoomIn" data-duration="1000">
-                   <div class="card-body p-5">
-                      <div class="d-lg-flex">
-                         <div class="p-3 icon-xl icon-shape rounded bg-info bg-opacity-10 border border-info-subtle">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-window-dock text-info" viewBox="0 0 16 16">
-                               <path
-                                  d="M3.5 11a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm3.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm4.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Z" />
-                               <path
-                                  d="M14 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h12ZM2 14h12a1 1 0 0 0 1-1V5H1v8a1 1 0 0 0 1 1ZM2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1H2Z" />
-                            </svg>
-                         </div>
-                         <div class="ms-lg-5 mt-4 mt-lg-0">
-                            <div class="mb-4">
-                               <h3>Assurance qualitée</h3>
-                               <p class="mb-0">Nous vous garantissons une application de qualité , sans bug , de haute perfomance, stable .</p>
-                            </div>
-                         </div>
-                      </div>
-                   </div>
-                </div>
-             </div>
-          </div>
-       </div>
-    </section>
-    <!--Our solutions end-->
-    <section class="py-5">
-       <div class="container my-lg-7">
-          <div class="row">
-             <div class="col-12">
-                <div class="mb-5 text-center" data-cue="fadeIn" data-show="true" style="animation-name: fadeIn; animation-duration: 600ms; animation-timing-function: ease; animation-delay: 0ms; animation-direction: normal; animation-fill-mode: both;">
-                   <h2 class="mb-0">Nous proposons d'autres  divers services comme </h2>
-                </div>
-             </div>
+				<!-- Slider START -->
+				<div class="swiper" data-swiper-options='{
+					"spaceBetween": 30,
+					"grabCursor": true,
+					"speed":"1000",
+					"navigation":{
+						"nextEl":".swiper-button-next",
+						"prevEl":".swiper-button-prev"
+					},
+					"autoplay":{
+						"delay": 5000,
+						"disableOnInteraction": true,
+						"pauseOnMouseEnter": true
+					},
+					"breakpoints": {
+						"576": {"slidesPerView": 1},
+						"768": {"slidesPerView": 2},
+						"992": {"slidesPerView": 3},
+						"1200": {"slidesPerView": 2}
+					}}'>
 
-             <div class="row gy-4">
-                <div class="col-md-4 col-12" data-cue="slideInLeft" data-show="true" style="animation-name: slideInLeft; animation-duration: 600ms; animation-timing-function: ease; animation-delay: 0ms; animation-direction: normal; animation-fill-mode: both;">
-                   <div class="d-flex flex-column gap-4">
+					<div class="swiper-wrapper">
+						<!-- Slider items -->
+                        @foreach ($allProjets as $projet)
+						<div class="swiper-slide">
+							<div class="card border overflow-hidden p-0 h-100">
 
 
-                      <div>
-                         <h4 class="mb-2">Systeme CEO </h4>
-                         <p>Block is the powerful front-end solution based on Bootstrap 5 —Powerful, extensible, and feature-packed frontend toolkit.</p>
-                      </div>
-                   </div>
-                </div>
-                <div class="col-md-4 col-12" data-cue="zoomIn" data-show="true" style="animation-name: zoomIn; animation-duration: 600ms; animation-timing-function: ease; animation-delay: 200ms; animation-direction: normal; animation-fill-mode: both;">
-                   <div class="d-flex flex-column gap-4">
+								<!-- Image -->
+								<div class="card-header bg-transparent pb-0">
+									<img src="{{asset('projets/images/'.$projet->image)}}" alt="">
+								</div>
 
-                      <div>
-                         <h4 class="mb-2">Marketing digitale </h4>
-                         <p>Block is built using Sass. Easily change colors, typo, and much more. It is the most mature, stable, and powerful CSS extension language in the world.</p>
-                      </div>
-                   </div>
-                </div>
-                <div class="col-md-4 col-12" data-cue="slideInRight" data-show="true" style="animation-name: slideInRight; animation-duration: 600ms; animation-timing-function: ease; animation-delay: 400ms; animation-direction: normal; animation-fill-mode: both;">
-                   <div class="d-flex flex-column gap-4">
+								<!-- Card body -->
+								<div class="card-body pt-0">
+									<h6 class="card-title"><a href="#" class="stretched-link">{{$projet->title}}</a></h6>
+									<p class="mb-0">{{Str::limit($projet->description,50)}} </p>
+								</div>
 
-                      <div>
-                         <h4 class="mb-2">Accompagnement d'entreprise</h4>
-                         <p>
-                            All HTML files are checked via the W3C validator to sssssssssssssssssssssssre.  All HTML files are checked via the W3C validator to sssssssssssssssssssssssre.
-                         </p>
-                      </div>
-                   </div>
-                </div>
-                <div class="col-md-4 col-12" data-cue="slideInLeft" data-show="true" style="animation-name: slideInLeft; animation-duration: 600ms; animation-timing-function: ease; animation-delay: 0ms; animation-direction: normal; animation-fill-mode: both;">
-                   <div class="d-flex flex-column gap-4">
-                      <div>
-                         <h4 class="mb-2">Comminuty Marketing</h4>
-                         <p>Say jQuery to NO! With the block we build a complete vanilla. js code for all the pages.</p>
-                      </div>
-                   </div>
-                </div>
-                <div class="col-md-4 col-12" data-cue="zoomIn" data-show="true" style="animation-name: zoomIn; animation-duration: 600ms; animation-timing-function: ease; animation-delay: 200ms; animation-direction: normal; animation-fill-mode: both;">
-                   <div class="d-flex flex-column gap-4">
-                      <div>
-                         <h4 class="mb-2">Placement de produit </h4>
-                         <p>Block theme documentation helps developers, It has a theme installation workflow and how to use it for your purpose and easy copy and paste snippets.</p>
-                      </div>
-                   </div>
-                </div>
-                <div class="col-md-4 col-12" data-cue="slideInRight" data-show="true" style="animation-name: slideInRight; animation-duration: 600ms; animation-timing-function: ease; animation-delay: 400ms; animation-direction: normal; animation-fill-mode: both;">
-                   <div class="d-flex flex-column gap-4">
-                      <div>
-                         <h4 class="mb-2">Mobile friendly website</h4>
-                         <p>Block is Mobile friendly, Designing websites to be mobile friendly ensures that your pages perform well on all devices.</p>
-                      </div>
-                   </div>
-                </div>
-                <div class="col-md-4 col-12" data-cue="slideInLeft" data-show="true" style="animation-name: slideInLeft; animation-duration: 600ms; animation-timing-function: ease; animation-delay: 0ms; animation-direction: normal; animation-fill-mode: both;">
-                   <div class="d-flex flex-column gap-4">
+								<!-- Card footer -->
+								<div class="card-footer bg-transparent d-flex justify-content-between align-items-center pt-0">
+									<div class="d-flex align-items-center gap-2 justify-content-center">
+										<p class="fw-bold text-success mb-0">12300 FCFA</p>
 
-                      <div>
-                         <h4 class="mb-2">Kick-Start Your Development</h4>
-                         <p>Full task automation. Start your development process fast and easy with Node.js and Gulp setup. Configuration files are included.</p>
-                      </div>
-                   </div>
-                </div>
-                <div class="col-md-4 col-12" data-cue="zoomIn" data-show="true" style="animation-name: zoomIn; animation-duration: 600ms; animation-timing-function: ease; animation-delay: 200ms; animation-direction: normal; animation-fill-mode: both;">
-                   <div class="d-flex flex-column gap-4">
-                      <div>
-                         <h4 class="mb-2">Light/ Dark Mode</h4>
-                         <p>Block theme pages also come with the light / dark mode. All components include a dark variant that lets you style your site differently when dark mode is enabled.</p>
-                      </div>
-                   </div>
-                </div>
-                <div class="col-md-4 col-12" data-cue="slideInRight" data-show="true" style="animation-name: slideInRight; animation-duration: 600ms; animation-timing-function: ease; animation-delay: 400ms; animation-direction: normal; animation-fill-mode: both;">
-                   <div class="d-flex flex-column gap-4">
-                      <div>
-                         <h4 class="mb-2">Active Support</h4>
-                         <p>
-                            Our support team helps you solve any issues you have in working with Block them. To get help from our team,
-                            <a href="#">Contact us.</a>
-                         </p>
-                      </div>
-                   </div>
-                </div>
-             </div>
-          </div>
-       </div>
-    </section>
+									</div>
+									<a href="#" class="btn btn-dark mb-0 z-index-2">ACHETER</a>
+								</div>
+							</div>
+						</div>
+                        @endforeach
 
-    <!--Who we are start-->
-    <section class="my-xl-9 my-5">
-       <div class="container">
-          <div class="row g-4">
-             <div class="col-xl-5 col-lg-6 col-12" data-cue="slideInLeft">
-                <div class="mb-4">
-                   <small class="text-uppercase ls-md fw-semibold">Pourquoi nous ?</small>
-                   <h2 class="h1 mt-4 mb-3">Nous croyons au pouvoir de la stratégie créative.</h2>
-                   <p class="mb-3">Attirer. Convertir. Transformer. Fidéliser. Tels sont les objectifs que vous devez atteindre dans votre stratégie digitale. Nous aidons nos clients à développer leur chiffre d’affaires grâce à la transformation digitale du marketing et des ventes. Délivrer le bon message au bon moment et à la bonne personne. Une combinaison mêlant stratégie efficiente et utilisation de la data...</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 
-                </div>
+<br><br>
+<div class="inner-container-small text-center mb-4 mb-sm-6">
+    <h2>Nos Services</h2>
+    <p class="mb-0">He moonlights difficult engrossed it, sportsmen. Interested has all Devonshire difficulty gay assistance joy.</p>
+</div>
 
-                <a href="#" class="icon-link icon-link-hover">
-                   Démarrer votre projet avec nous
-                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                      <path
-                         fill-rule="evenodd"
-                         d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-                   </svg>
-                </a>
-             </div>
-             <div class="col-xl-6 offset-xl-1 col-lg-6 col-12">
-                <div class="row g-4" data-cues="slideInUp" data-delay="1000">
-                   <div class="col-lg-6 col-md-6 col-12">
-                      <a href="#!">
-                         <div
-                            class="rounded-3 card-lift"
-                            style="background-image: url(assets/images/about-img/about-grid-img-2.jpg); background-repeat: no-repeat; height: 386px; background-size: cover"></div>
-                      </a>
-                   </div>
-                   <div class="col-lg-6 col-md-6 col-12">
-                      <a href="#!">
-                         <div
-                            class="mb-4 rounded-3 card-lift"
-                            style="background-image: url(assets/images/about-img/about-grid-img-1.jpg); background-repeat: no-repeat; height: 180px; background-size: cover"></div>
-                      </a>
-                      <a href="#!">
-                         <div
-                            class="mb-2 rounded-3 card-lift"
-                            style="background-image: url(assets/images/about-img/about-grid-img-3.jpg); background-repeat: no-repeat; height: 180px; background-size: cover"></div>
-                      </a>
-                   </div>
-                </div>
-             </div>
-          </div>
-       </div>
-    </section>
-    <!--Who we are end-->
+<section class="pt-0" id="nosservices">
+	<div class="container">
+		<div class="row g-4 g-lg-5">
+			<!-- Service item -->
+            @foreach ($allServices as $service)
+			<div class="col-md-6">
+				<div class="card card-body card-hover-shadow border d-flex flex-row p-4 h-100">
+					<!-- Icon -->
+					<figure class="text-primary mb-0">
+						<svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M20.2402 6.75391C21.2543 9.81065 21.2543 11.8485 20.2402 14.9052" stroke="currentColor" stroke-opacity="0.25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+							<path d="M2.25047 12.9739C2.25055 14.0922 3.15715 14.9988 4.27547 14.9988V14.9988L4.25651 19.4911C4.25125 20.7361 5.25945 21.7481 6.50452 21.7474V21.7474C7.74497 21.7468 8.75021 20.741 8.75021 19.5006V15.1105H10V6.55981H6.46978C5.09959 6.55981 4.41449 6.55981 3.87962 6.79848C3.26038 7.07479 2.76505 7.57015 2.48879 8.18941C2.25016 8.72431 2.25021 9.4094 2.25031 10.7796L2.25047 12.9739Z" fill="currentColor"></path>
+							<path d="M11.0002 15.8122C13.9211 18.3111 15.3815 19.5606 16.6274 19.37C17.1377 19.2919 17.6157 19.0718 18.0068 18.7348C18.9616 17.912 18.9616 15.99 18.9616 12.146V9.4287C18.9616 5.58267 18.9616 3.65966 18.0199 2.83775C17.6138 2.48322 17.1124 2.2559 16.5781 2.18405C15.3393 2.01748 13.893 3.28476 11.0002 5.81933V5.81933V15.8122V15.8122Z" fill="currentColor" fill-opacity="0.25"></path>
+						</svg>
+					</figure>
 
-    <!--Expert team start-->
-    <section>
-       <div class="container" data-cue="fadeIn">
-          <div class="row border-top border-bottom">
-             <div class="col-md-4 border-end-md border-bottom border-bottom-md-0" data-cue="zoomIn">
-                <div class="text-center py-lg-5 p-4">
-                   <div class="mb-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-people-fill text-primary" viewBox="0 0 16 16">
-                         <path
-                            d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
-                      </svg>
-                   </div>
+					<!-- Title -->
+					<div class="d-flex flex-column ms-4">
+						<h5 class="mb-3">{{$service->title}}</h5>
+						<p class="mb-3">{{Str::limit($service->description, 200)}}</p>
+						<a class="icon-link icon-link-hover stretched-link mt-auto" href="{{route('detail.service', $service->slug)}}">Consulter<i class="bi bi-arrow-right"></i> </a>
+					</div>
+				</div>
+			</div>
 
-                   <h4>Une equipe d'expert</h4>
-                   <p class="mb-0">Nos équipes sont composés d'expert pour vous acompagner tout le long de vos projets.</p>
-                </div>
-             </div>
-             <div class="col-md-4 border-end-md border-bottom border-bottom-md-0" data-cue="zoomIn">
-                <div class="text-center py-lg-5 p-4">
-                   <div class="mb-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-trophy-fill text-primary" viewBox="0 0 16 16">
-                         <path
-                            d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5c0 .538-.012 1.05-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33.076 33.076 0 0 1 2.5.5zm.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935zm10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935z" />
-                      </svg>
-                   </div>
-
-                   <h4>Meilleure Agence</h4>
-                   <p class="mb-0">Meilleure agence de la marketing digitale et de la conception de solution informatique</p>
-                </div>
-             </div>
-             <div class="col-md-4" data-cue="zoomIn">
-                <div class="text-center py-lg-5 p-4">
-                   <div class="mb-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-stars text-primary" viewBox="0 0 16 16">
-                         <path
-                            d="M7.657 6.247c.11-.33.576-.33.686 0l.645 1.937a2.89 2.89 0 0 0 1.829 1.828l1.936.645c.33.11.33.576 0 .686l-1.937.645a2.89 2.89 0 0 0-1.828 1.829l-.645 1.936a.361.361 0 0 1-.686 0l-.645-1.937a2.89 2.89 0 0 0-1.828-1.828l-1.937-.645a.361.361 0 0 1 0-.686l1.937-.645a2.89 2.89 0 0 0 1.828-1.828l.645-1.937zM3.794 1.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387A1.734 1.734 0 0 0 4.593 5.69l-.387 1.162a.217.217 0 0 1-.412 0L3.407 5.69A1.734 1.734 0 0 0 2.31 4.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387A1.734 1.734 0 0 0 3.407 2.31l.387-1.162zM10.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732L9.1 2.137a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L10.863.1z" />
-                      </svg>
-                   </div>
-
-                   <h4>04 ans  D'experience .</h4>
-                   <p class="mb-0">Plus de 04 d'experience à votre service pour vous fournir un service de qualité .</p>
-                </div>
-             </div>
-          </div>
-       </div>
-    </section>
-    <!--Expert team end-->
-
-    <!--Our articles start-->
-    <section class="my-xl-9 my-5">
-       <div class="container">
-          <div class="row">
-             <div class="col-lg-6 offset-lg-3" data-cue="fadeIn">
-                <div class="text-center mb-xl-7 mb-5">
-                   <h2 class="h1 mb-3">
-                       Nos articles sur l'agence</h2>
-                   <p class="mb-0">Suivez l'actualité de notre groupe et restez informé de notre evolution .</p>
-                </div>
-             </div>
-          </div>
-          <!-- Blog Card -->
-          <div class="table-responsive-lg">
-             <div class="row g-5 flex-nowrap pb-4 pb-lg-0 me-5 me-lg-0">
-                @foreach ($allActualites as $actualite)
+            @endforeach
 
 
-                <article class="col-lg-4 col-md-6 col-12" data-cue="zoomIn">
-                   <figure class="mb-4 zoom-img">
-                      <a href="#">
-                         <img src="{{asset('actualites/images/'.$actualite->image)}}" alt="blog" class="img-fluid rounded-3" />
-                      </a>
-                   </figure>
+		</div>
+	</div>
+</section>
 
 
-                   <h3 class="my-3 lh-base h4">
-                      <a href="#" class="text-reset">{{$actualite->title}}</a>
-                   </h3>
+<section class="pt-0" >
+	<div class="container">
+		<!-- Title -->
+		<div class="inner-container-small text-center mb-4 mb-sm-6">
+			<h2>Notre équipe </h2>
+			<p class="mb-0">Notre équipe à nos services pour une meilleure prise en charge de vos projets.</p>
+		</div>
 
-                <p>{{$actualite->description}}</p>
-                </article>
+		<!-- Team list START -->
+		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-5 g-4 justify-content-center">
+			<!-- Team item -->
+			<div class="col">
+				<div class="card card-body card-hover-shadow bg-transparent text-center p-4">
+					<!-- Image -->
+					<div class="avatar avatar-xxl mx-auto flex-shrink-0 mb-3">
+						<img class="avatar-img rounded-circle" src="assets/images/avatar/04.jpg" alt="avatar">
+					</div>
 
-                @endforeach
-             </div>
-          </div>
-          <div class="row">
-             <div class="col-lg-12" data-cue="zoomIn">
-                <div class="mt-lg-8 mt-5">
-                   <a href="{{route('home.actualite')}}" class="icon-link icon-link-hover text-dark">
-                     Lire plus d'article
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                         <path
-                            fill-rule="evenodd"
-                            d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-                      </svg>
-                   </a>
-                </div>
-             </div>
-          </div>
-       </div>
-    </section>
-    <!--Our articles end-->
+					<!-- Content -->
+					<h6 class="mb-1"><a href="#">Samuel Bishop</a></h6>
+					<small>UI/UX Designer</small>
 
-    <!--Hire jamstack start-->
-    <section class="pattern-square bg-info bg-opacity-10" id="#section">
-       <div class="container position-relative z-1 py-xl-9 py-6">
-          <div class="row">
-             <div class="col-lg-10 offset-lg-1 col-md-12">
-                <div class="row align-items-center g-5">
-                   <div class="col-lg-6 col-12 order-2" data-cue="slideInLeft">
-                      <div class="me-xl-7">
-                         <div class="mb-5">
-                            <h2 class="h1 mb-4">Pour une experience reussie </h2>
-                            <p class="mb-0">Prenez contact avec nos équipes commerciales et discutez des conditions et des modalités de vos projets !</p>
-                         </div>
-                         <div class="mb-5">
-                            <ul class="list-unstyled">
-                               <li class="mb-2 d-flex">
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
-                                     <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
-                                  </svg>
-                                  <span class="ms-1">Discutez avec nos commericiaux?</span>
-                               </li>
-                               <li class="mb-2 d-flex">
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
-                                     <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
-                                  </svg>
-                                  <span class="ms-1">Expliquez-les vos besoins?</span>
-                               </li>
-                               <li class="mb-2 d-flex">
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
-                                     <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
-                                  </svg>
-                                  <span class="ms-1">Nous executons le projet dans les delai raisonnable?</span>
-                               </li>
-                            </ul>
-                         </div>
-                         <div class="d-md-flex align-items-center justify-content-between">
-                            <div class="d-flex align-items-center mb-3 mb-md-0 small">
-                               <div class="d-flex align-items-center">
-                                  <img src="{{asset('LOOGO.png')}}" alt="Avatar" class="avatar avatar-lg rounded-circle" />
-                                  <div class="ms-3">
-                                     <h5 class="mb-0">CEO DE NEGOCE GROUP</h5>
-                                     <small class="me-4">Negoce group service</small>
-                                     <small>negocegroup@gmail.com</small>
-                                  </div>
-                               </div>
-                            </div>
-                         </div>
-                      </div>
-                   </div>
-                   <div class="col-lg-6 col-12 order-lg-2" data-cue="slideInRight">
-                      <div class="card shadow-sm">
-                         <div class="card-body">
-                            <form  method="POST" action="{{ route('contact.poste') }}" novalidate>
-                                @csrf
-                               <div class="col-lg-12">
-                                  <div class="mb-3">
-                                     <h3 class="mb-0">Contactez nous et commencons</h3>
-                                  </div>
-                               </div>
-                               <div class="col-md-12 col-12">
-                                  <label for="ScheduleFirstnameInput" class="form-label">
-                                     Nom
-                                     <span class="text-danger">*</span>
-                                  </label>
-                                  <input type="text" name="name" class="form-control" id="name" required=""  placeholder="Votre nom" value="Negoce">
-                                 *
-                               </div>
+					<!-- Social button -->
+					<ul class="list-inline mb-0 mt-3">
+						<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-facebook-f lh-base"></i></a> </li>
+						<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-instagram lh-base"></i></a> </li>
+						<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-twitter lh-base"></i></a> </li>
+					</ul>
+				</div>
+			</div>
 
-                               <div class="col-md-12">
-                                  <label for="scheduleEmailInput" class="form-label">
-                                     Email
-                                     <span class="text-danger">*</span>
-                                  </label>
-                                  <input type="email" name="email" class="form-control" id="email" required=""  placeholder="Your email address" value="email@gmail.com">
+			<!-- Team item -->
+			<div class="col">
+				<div class="card card-body card-hover-shadow bg-transparent text-center p-4">
+					<!-- Image -->
+					<div class="avatar avatar-xxl mx-auto flex-shrink-0 mb-3">
+						<img class="avatar-img rounded-circle" src="assets/images/avatar/11.jpg" alt="avatar">
+					</div>
 
-                               </div>
-                               <div class="col-md-12">
-                                  <label for="scheduleTextarea" class="form-label">Message</label>
-                                  <textarea class="form-control" name="message" id="message"  placeholder="Votre message" rows="3" required></textarea>
-                               </div>
-                               <br><br>
-                               <div class="d-grid">
-                                  <button class="btn btn-primary" type="submit">Debuter votre projet!</button>
-                               </div>
-                            </form>
-                         </div>
-                      </div>
-                   </div>
-                </div>
-             </div>
-          </div>
-       </div>
-    </section>
-    <!--Hire jamstack end-->
- </main>
+					<!-- Content -->
+					<h6 class="mb-1"><a href="#">Judy Nguyen</a></h6>
+					<small>Web Designer</small>
+
+					<!-- Social button -->
+					<ul class="list-inline mb-0 mt-3">
+						<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-facebook-f lh-base"></i></a> </li>
+						<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-instagram lh-base"></i></a> </li>
+						<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-twitter lh-base"></i></a> </li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- Team item -->
+			<div class="col">
+				<div class="card card-body card-hover-shadow bg-transparent text-center p-4">
+					<!-- Image -->
+					<div class="avatar avatar-xxl mx-auto flex-shrink-0 mb-3">
+						<img class="avatar-img rounded-circle" src="assets/images/avatar/06.jpg" alt="avatar">
+					</div>
+
+					<!-- Content -->
+					<h6 class="mb-1"><a href="#">Louis Ferguson</a></h6>
+					<small>Web Developer</small>
+
+					<!-- Social button -->
+					<ul class="list-inline mb-0 mt-3">
+						<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-facebook-f lh-base"></i></a> </li>
+						<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-instagram lh-base"></i></a> </li>
+						<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-twitter lh-base"></i></a> </li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- Team item -->
+			<div class="col">
+				<div class="card card-body card-hover-shadow bg-transparent text-center p-4">
+					<!-- Image -->
+					<div class="avatar avatar-xxl mx-auto flex-shrink-0 mb-3">
+						<img class="avatar-img rounded-circle" src="assets/images/avatar/05.jpg" alt="avatar">
+					</div>
+
+					<!-- Content -->
+					<h6 class="mb-1"><a href="#">Dennis Barrett</a></h6>
+					<small>CEO &amp; Founder</small>
+
+					<!-- Social button -->
+					<ul class="list-inline mb-0 mt-3">
+						<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-facebook-f lh-base"></i></a> </li>
+						<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-instagram lh-base"></i></a> </li>
+						<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-twitter lh-base"></i></a> </li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- Team item -->
+			<div class="col">
+				<div class="card card-body card-hover-shadow bg-transparent text-center p-4">
+					<!-- Image -->
+					<div class="avatar avatar-xxl mx-auto flex-shrink-0 mb-3">
+						<img class="avatar-img rounded-circle" src="assets/images/avatar/10.jpg" alt="avatar">
+					</div>
+
+					<!-- Content -->
+					<h6 class="mb-1"><a href="#">Bryan Knight</a></h6>
+					<small>Product Designer</small>
+
+					<!-- Social button -->
+					<ul class="list-inline mb-0 mt-3">
+						<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-facebook-f lh-base"></i></a> </li>
+						<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-instagram lh-base"></i></a> </li>
+						<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-twitter lh-base"></i></a> </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- Team list END -->
+	</div>
+</section>
+
+
+
+
+
+
+
+
+
+<section id="catalogue">
+	<div class="container">
+		<div class="inner-container-small text-center">
+			<!-- SVG -->
+			<figure class="mb-4">
+				<svg width="223.6px" height="87.2px" viewBox="0 0 223.6 87.2" style="enable-background:new 0 0 223.6 87.2;" xml:space="preserve">
+					<path class="fill-mode" d="M222.9,53.8c-13.2-3-28-3-41,0.9c-5.5,1.7-11,4.3-14.9,8.7c-1.3-0.1-2.6-0.2-3.8-0.1 c-5.8,0.1-11.6,1.5-16.9,3.7c-2.9,1.2-5.7,2.9-8.5,4.4c-3.7,1.9-7.4,3.8-11.3,5.3c-7.3,2.9-16,5-23.5,1.7c-1.5-0.6-2.9-1.5-4.1-2.6 c6.5-2.6,12.2-7.9,13.2-15c0.8-6.6-5.1-12.1-11.6-11.4c-5,0.6-7.5,5.6-8.3,10.1c-0.9,4.9-0.3,10.8,2.7,14.9 c0.2,0.2,0.4,0.5,0.5,0.7c-0.4,0.1-0.8,0.2-1.3,0.3c-6.6,1.5-14.3,0.3-20.3-2.9c-6.1-3.3-10.3-9.1-12.3-15.6 c-0.2-0.7-1.2-0.4-1,0.3c2.1,7.3,6.7,13.4,13.4,17.1c6.8,3.7,15.4,4.5,22.7,2.4c0,0,0.1,0,0.1,0c4.5,4.4,11.2,5.9,17.3,5.4 c8-0.6,15.6-4.1,22.7-7.7c5.6-2.9,10.8-6,17-7.6c3.8-0.9,7.8-1.5,11.8-1.3c-3.3,4.8-4.6,11.1-2.3,16.5c2.8,6.4,11.3,6.7,16.3,2.8 c5.1-4,2.8-12.4-1-16.4c-2.4-2.5-5.7-3.9-9.1-4.5c0.2-0.2,0.3-0.3,0.5-0.4c4.3-4,10.2-6.2,15.9-7.5c11.8-2.8,24.9-2.7,36.7,0 C223.6,56,224.1,54,222.9,53.8z M95.5,71.6c-1.2-2.4-1.7-5.1-1.8-7.8c-0.1-4.5,1.1-11.2,6.1-12.6c2.4-0.7,5.2,0.4,7.2,1.7 c2.9,1.9,3.5,5.5,2.9,8.7c-1.2,6.2-6.8,10.5-12.6,12.6C96.7,73.4,96,72.5,95.5,71.6z M171.5,66.3c5.7,1.8,10.3,7.8,8.5,14 c-1.1,3.9-6.1,5.2-9.6,4.8c-3.5-0.4-5.5-3.4-6.2-6.5c-1.1-4.7,0.6-9.5,3.5-13.1C169,65.7,170.2,65.9,171.5,66.3z"></path>
+					<polygon class="fill-primary" points="65.3,39 61,56.8 0.7,0.7"></polygon>
+					<path class="fill-mode" d="M60.6,57.3L0.2,1.1C0,0.9-0.1,0.5,0.1,0.3C0.3,0,0.7-0.1,1,0.1l64.7,38.3c0.2,0.1,0.4,0.4,0.3,0.7l-4.3,17.8 c-0.1,0.2-0.2,0.4-0.4,0.5c-0.1,0-0.1,0-0.2,0C60.9,57.4,60.7,57.4,60.6,57.3z M5.6,4.3l55.1,51.2l3.9-16.3L5.6,4.3z"></path>
+					<polygon class="fill-primary" points="56.5,42.4 61,56.8 0.7,0.8"></polygon>
+					<path class="fill-mode" d="M60.6,57.3L0.2,1.3C0,1.1-0.1,0.7,0.2,0.4c0.2-0.3,0.6-0.3,0.9-0.1l55.8,41.5c0.1,0.1,0.2,0.2,0.2,0.3 l4.6,14.4c0.1,0.3,0,0.6-0.3,0.8c-0.1,0.1-0.2,0.1-0.4,0.1C60.9,57.4,60.7,57.4,60.6,57.3z M10.1,8.7l49.6,45.9l-3.8-11.8 L10.1,8.7z"></path>
+					<polygon class="fill-primary" points="0.7,0.7 91.5,28.5 65.2,38.8 			"></polygon>
+					<path class="fill-mode" d="M64.9,39.4L0.3,1.2C0,1.1-0.1,0.7,0.1,0.4C0.2,0.1,0.5-0.1,0.9,0l90.9,27.8c0.3,0.1,0.5,0.3,0.5,0.6 c0,0.3-0.2,0.5-0.4,0.6L65.4,39.4c-0.1,0-0.2,0-0.2,0C65.1,39.4,65,39.4,64.9,39.4z M5.8,2.9l59.5,35.2l24.3-9.5L5.8,2.9z"></path>
+					<polygon class="fill-primary" points="56.3,42.4 26.5,57.6 0.7,0.7 			"></polygon>
+					<path class="fill-mode" d="M26.3,58.3c-0.2-0.1-0.3-0.2-0.4-0.3L0.1,0.9c-0.1-0.3,0-0.6,0.2-0.8C0.5,0,0.8,0,1.1,0.1l55.7,41.8 c0.2,0.1,0.3,0.4,0.3,0.6c0,0.2-0.2,0.4-0.4,0.5L26.8,58.2c-0.1,0-0.2,0.1-0.3,0.1C26.5,58.3,26.4,58.3,26.3,58.3z M2.3,2.7 l24.5,54l28.2-14.4L2.3,2.7z"></path>
+				</svg>
+			</figure>
+
+			<!-- Title -->
+			<h2>NOTRE CATALOGUE </h2>
+			<p>Entrer votre email pour recevoir nos catalogue</p>
+
+			<div class="position-relative mt-5">
+				<!-- SVG decoration -->
+				<figure class="position-absolute top-100 start-100 translate-middle d-none d-lg-block">
+					<svg class="opacity-1" width="148" height="140" viewBox="0 0 148 140" xmlns="http://www.w3.org/2000/svg">
+						<path class="fill-primary" d="m9.95 131.41c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<circle class="fill-primary" cx="25.86" cy="131.41" r="2.95"></circle>
+						<circle class="fill-primary" cx="44.71" cy="131.41" r="2.95"></circle>
+						<circle class="fill-primary" cx="63.57" cy="131.41" r="2.95"></circle>
+						<circle class="fill-primary" cx="82.43" cy="131.41" r="2.95"></circle>
+						<circle class="fill-primary" cx="101.29" cy="131.41" r="2.95"></circle>
+						<circle class="fill-primary" cx="120.14" cy="131.41" r="2.95"></circle>
+						<path class="fill-primary" d="m141.95 131.41c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m9.95 113.61c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<circle class="fill-primary" cx="25.86" cy="113.61" r="2.95"></circle>
+						<circle class="fill-primary" cx="44.71" cy="113.61" r="2.95"></circle>
+						<circle class="fill-primary" cx="63.57" cy="113.61" r="2.95"></circle>
+						<circle class="fill-primary" cx="82.43" cy="113.61" r="2.95"></circle>
+						<circle class="fill-primary" cx="101.29" cy="113.61" r="2.95"></circle>
+						<circle class="fill-primary" cx="120.14" cy="113.61" r="2.95"></circle>
+						<path class="fill-primary" d="m141.95 113.61c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m9.95 95.81c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<circle class="fill-primary" cx="25.86" cy="95.81" r="2.95"></circle>
+						<circle class="fill-primary" cx="44.71" cy="95.81" r="2.95"></circle>
+						<circle class="fill-primary" cx="63.57" cy="95.81" r="2.95"></circle>
+						<circle class="fill-primary" cx="82.43" cy="95.81" r="2.95"></circle>
+						<circle class="fill-primary" cx="101.29" cy="95.81" r="2.95"></circle>
+						<circle class="fill-primary" cx="120.14" cy="95.81" r="2.95"></circle>
+						<path class="fill-primary" d="m141.95 95.81c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m9.95 78.01c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95c1.63 0.01 2.95 1.33 2.95 2.95z"></path>
+						<path class="fill-primary" d="m28.8 78.01c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95c1.63 0.01 2.95 1.33 2.95 2.95z"></path>
+						<path class="fill-primary" d="m47.66 78.01c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95c1.63 0.01 2.95 1.33 2.95 2.95z"></path>
+						<path class="fill-primary" d="m66.52 78.01c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95c1.63 0.01 2.95 1.33 2.95 2.95z"></path>
+						<path class="fill-primary" d="m85.37 78.01c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95c1.64 0.01 2.95 1.33 2.95 2.95z"></path>
+						<path class="fill-primary" d="m104.23 78.01c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95c1.63 0.01 2.95 1.33 2.95 2.95z"></path>
+						<path class="fill-primary" d="m123.09 78.01c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95c1.63 0.01 2.95 1.33 2.95 2.95z"></path>
+						<path class="fill-primary" d="m141.95 78.01c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95c1.63 0.01 2.95 1.33 2.95 2.95z"></path>
+						<path class="fill-primary" d="m9.95 60.22c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m28.8 60.22c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m47.66 60.22c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m66.52 60.22c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m85.37 60.22c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95c1.64 0 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m104.23 60.22c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m123.09 60.22c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m141.95 60.22c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m9.95 42.42c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m28.8 42.42c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m47.66 42.42c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m66.52 42.42c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m85.37 42.42c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95c1.64 0 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m104.23 42.42c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m123.09 42.42c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m141.95 42.42c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m9.95 24.62c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<circle class="fill-primary" cx="25.86" cy="24.62" r="2.95"></circle>
+						<circle class="fill-primary" cx="44.71" cy="24.62" r="2.95"></circle>
+						<circle class="fill-primary" cx="63.57" cy="24.62" r="2.95"></circle>
+						<circle class="fill-primary" cx="82.43" cy="24.62" r="2.95"></circle>
+						<circle class="fill-primary" cx="101.29" cy="24.62" r="2.95"></circle>
+						<circle class="fill-primary" cx="120.14" cy="24.62" r="2.95"></circle>
+						<path class="fill-primary" d="m141.95 24.62c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m9.95 6.82c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95c0-1.62 1.32-2.94 2.95-2.94s2.95 1.32 2.95 2.94z"></path>
+						<circle class="fill-primary" cx="25.86" cy="6.82" r="2.95"></circle>
+						<circle class="fill-primary" cx="44.71" cy="6.82" r="2.95"></circle>
+						<circle class="fill-primary" cx="63.57" cy="6.82" r="2.95"></circle>
+						<circle class="fill-primary" cx="82.43" cy="6.82" r="2.95"></circle>
+						<circle class="fill-primary" cx="101.29" cy="6.82" r="2.95"></circle>
+						<circle class="fill-primary" cx="120.14" cy="6.82" r="2.95"></circle>
+						<path class="fill-primary" d="m141.95 6.82c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95c1.63 0.01 2.95 1.33 2.95 2.95z"></path>
+					</svg>
+				</figure>
+
+				<!-- Input -->
+				<div class="bg-light border rounded-2 position-relative z-index-2 p-2 mb-2">
+					<form class="input-group">
+						<input class="form-control form-control-lg focus-shadow-none bg-light border-0 me-1" type="email" placeholder="Enter your email address">
+						<button type="button" class="btn btn-lg btn-dark rounded-2 mb-0">ENVOYER!</button>
+					</form>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+<section class="pt-0">
+	<div class="container text-center">
+		<!-- Client-Slider START -->
+		<p class="heading-color fw-semibold mb-4">Ceux qui nous font confiance</p>
+
+		<div class="swiper swiper-initialized swiper-horizontal swiper-backface-hidden" data-swiper-options="{
+			&quot;loop&quot;: false,
+			&quot;slidesPerView&quot;: 2,
+			&quot;spaceBetween&quot;: 30,
+			&quot;breakpoints&quot;: {
+				&quot;576&quot;: {&quot;slidesPerView&quot;: 2},
+				&quot;768&quot;: {&quot;slidesPerView&quot;: 3},
+				&quot;992&quot;: {&quot;slidesPerView&quot;: 4},
+				&quot;1200&quot;: {&quot;slidesPerView&quot;: 6}
+			}}">
+
+			<!-- Slider items -->
+			<div class="swiper-wrapper align-items-center" id="swiper-wrapper-f630309976f13405" aria-live="off" style="transition-duration: 0ms; transform: translate3d(-240.667px, 0px, 0px);">
+				<!-- Image -->
+				<div class="swiper-slide swiper-slide-prev" role="group" aria-label="1 / 8" style="width: 210.667px; margin-right: 30px;">
+					<img src="{{asset('ministere-agriculture.jpeg')}}" class="grayscale px-sm-4 ps-0" alt="client-img">
+				</div>
+				<!-- Image -->
+				<div class="swiper-slide swiper-slide-active" role="group" aria-label="2 / 8" style="width: 210.667px; margin-right: 30px;">
+					<img src="{{asset('conseil-cafe-cacao.jpg')}}" class="grayscale px-sm-4 ps-0" alt="client-img">
+				</div>
+				<!-- Image -->
+				<div class="swiper-slide swiper-slide-next" role="group" aria-label="3 / 8" style="width: 210.667px; margin-right: 30px;">
+					<img src="{{asset('cargillwebsite.jpg')}}" class="grayscale px-sm-4 ps-0" alt="client-img">
+				</div>
+				<!-- Image -->
+				<div class="swiper-slide" role="group" aria-label="4 / 8" style="width: 210.667px; margin-right: 30px;">
+					<img src="{{asset('Bollore_transport_logistics_RVB_02.png')}}" class="grayscale px-sm-4 ps-0" alt="client-img">
+				</div>
+				<!-- Image -->
+				<div class="swiper-slide" role="group" aria-label="5 / 8" style="width: 210.667px; margin-right: 30px;">
+					<img src="{{asset('portabidjan.png')}}" class="grayscale px-sm-4" alt="client-img">
+				</div>
+				<!-- Image -->
+				<div class="swiper-slide" role="group" aria-label="6 / 8" style="width: 210.667px; margin-right: 30px;">
+					<img src="{{asset('air-ci.png')}}" class="grayscale px-sm-4" alt="client-img">
+				</div>
+				<!-- Image -->
+				<div class="swiper-slide" role="group" aria-label="7 / 8" style="width: 210.667px; margin-right: 30px;">
+					<img src="{{asset('port-sanpedro.png')}}" class="grayscale px-sm-4" alt="client-img">
+				</div>
+				<!-- Image -->
+
+			</div>
+		<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+		<!-- Client-Slider END -->
+	</div>
+</section>
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
 @endsection

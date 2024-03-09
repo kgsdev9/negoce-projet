@@ -37,6 +37,9 @@ Route::get('/nos-services', [HomeController::class, 'service'])->name('home.serv
 Route::get('/nos-projet', [HomeController::class, 'projet'])->name('home.projets');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/contact/post', [HomeController::class, 'contactsave'])->name('contact.poste');
-
+Route::get('/detail/{slug}', [HomeController::class, 'detailService'])->name('detail.service');
+Route::get('/apropos', function() {
+    return view('apropos');
+})->name('apropos');
 Auth::routes();
 

@@ -66,14 +66,19 @@
                   @foreach ($allServices as  $value)
                 <tr class="odd">
                   <td class="dtr-control sorting_1" tabindex="0">{{ $value->title }}</td>
-                  <td>{{ $value->description }}</td>
+                  <td>{{Str::limit($value->description,100) }}</td>
 
                   <td>
                     <img src="{{asset('services/images/'.$value->image)}}" style="height:100px;" alt="">
                 </td>
                   <td>
+
                   <a href="{{ route('service.edit', $value->id)}}" class="btn btn-primary"> Editer</a>
-                  <a href="{{ route('service.destroy', $value->id)}}" class="btn btn-danger"> Supprimer</a>
+                  <form action="{{ route('service.destroy', $value->id)}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-danger" type="submit">Supprimer</button>
+                </form>
 
                   </td>
                 </tr>

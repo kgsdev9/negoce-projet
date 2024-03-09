@@ -23,9 +23,14 @@ class HomeController extends Controller
     public function index()
     {
         return view('welcome', [
-            'allProjets'=> Project::take(3)->orderByDesc('created_at')->get(),
-            'allActualites'=> DB::select("SELECT * from actualites order by rand() desc limit 3")
+            'allProjets'=> Project::take(20)->orderByDesc('created_at')->get(),
+            'allServices'=> DB::select("SELECT * from services order by rand() desc ")
         ]);
+    }
+
+    public function detailService($slug) {
+        $servicedetail = Service::where('slug', $slug)->first();
+        return view('home.detailarticle', compact('servicedetail'));
     }
 
     public function actualites() {
@@ -59,7 +64,8 @@ class HomeController extends Controller
     public function contactsave(ContactRequest $request)
     {
         $data = $request->input();
-        Mail::to('kgsdev8@gmail.com')->send(new ContactMail($data['name'], $data['name'], $data['email'], $data['message']));
+        
+        Mail::to('bonyjeanelie@gmail.com')->send(new ContactMail($data['name'], $data['name'], $data['email'], $data['message']));
         Alert::success('Message envoyé', 'Votre message a été envoyé avec success');
         return redirect()->back();
     }

@@ -17,7 +17,7 @@ class ProjetController extends Controller
         $this->middleware('auth');
     }
 
-    
+
        /**
      * Display a listing of the resource.
      */
@@ -89,7 +89,7 @@ class ProjetController extends Controller
                 $file = $request->file('image');
                 $filename  = $file->getClientOriginalName();
                 $img = Image::make($file->getRealPath());
-                $img->resize(508, 320);
+                $img->resize(1000, 1000);
                 $img->save(public_path('projets/images/'.$filename));
                 $ressource->image  = $filename;
          }

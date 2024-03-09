@@ -1,10 +1,10 @@
-@extends('layout.app')
+@extends('layouts.app')
 
 @section('content')
 <div class="container ">
     <div class="row justify-content-center">
         <div class="col-md-8 mt-10">
-            <div class="card">
+            <div class="card mt-8">
                 <div class="card-header">{{ __('Se Connecter') }}</div>
 
                 <div class="card-body">
