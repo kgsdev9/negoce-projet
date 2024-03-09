@@ -318,13 +318,6 @@
 </section>
 
 
-
-
-
-
-
-
-
 <section id="catalogue">
 	<div class="container">
 		<div class="inner-container-small text-center">

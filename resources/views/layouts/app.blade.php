@@ -89,21 +89,10 @@
 								<a class="nav-link dropdown" href="">Création de ferme</a>
 
 							</li>
-
-
-
-
-
-
-
-
-
-
 						</ul>
 					</li>
 
 					<!-- Nav item -->
-
 
 					<!-- Nav item -->
 					<li class="nav-item"> <a class="nav-link" href="/contact">CONTACT</a> </li>
@@ -116,11 +105,13 @@
 
 				<!-- Sign up button -->
 				<li class="nav-item me-2">
-					<a href="{{route('login')}}" class="btn btn-sm btn-light mb-0"><i class="bi bi-person-circle me-1"></i>Connexion</a>
+                    @guest
+                    <a href="{{route('login')}}" class="btn btn-sm btn-light mb-0"><i class="bi bi-person-circle me-1"></i>Connexion</a>
+                    @else
+                    <a href="{{route('admin')}}" class="btn btn-sm btn-light mb-0"><i class="bi bi-person-circle me-1"></i>Mon espace</a>
+                    @endguest
+
 				</li>
-
-
-
 				<!-- Responsive navbar toggler -->
 				<li class="nav-item">
 					<button class="navbar-toggler ms-sm-3 p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
